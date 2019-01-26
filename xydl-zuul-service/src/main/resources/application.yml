@@ -1,0 +1,25 @@
+server:
+  port: 7777
+
+#注册到eureka中心
+eureka:
+  client:
+    service-url:
+     defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+  instance:
+    instance-id: zuul-7777.com
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: xydl-zuul-service
+
+zuul:
+  host:
+    max-per-route-connections: 60000
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+
+ribbon:
+  ReadTimeout: 60000  # 单位毫秒数
+  SocketTimeout: 60000
