@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e75f22b9-4e3a-4e25-ad25-5b82437db444" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/XydlCarApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/XydlCarApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/CarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/JSONResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/JSONResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-car/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-eureka-service/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-user/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-provider/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-consumer/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-provider2/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-consumer2/target/" />
+    <ignored path="$PROJECT_DIR$/bookstore/target/" />
+    <ignored path="$PROJECT_DIR$/reading/target/" />
+    <ignored path="$PROJECT_DIR$/book/target/" />
+    <ignored path="$PROJECT_DIR$/getway/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-eureka-service-1/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-eureka-service-2/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-eureka-service-3/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-zuul-service/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-map/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-data-api/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-atlas/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-users/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-robot/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-car/target/" />
+    <ignored path="$PROJECT_DIR$/xydl-admin/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/JSONResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/utils/JSONResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1062">
+              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/XydlUserApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/XydlZuulServiceApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-user/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/XydlConsumer2Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>com.njit.xydl.entity.AtlasImageExample</find>
+      <find>com.njit.xydl.entity</find>
+      <find>com.njit.map.xydl</find>
+      <find>.AtlasImage</find>
+      <find>LOGGER</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/controller/AtlasController.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/utils/HttpUtil.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/WeixinController.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/AtlasService.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/vo/UsersSc.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersSc.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UsersWxController.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/WxController.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/UsersWxService.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/XydlUsersApplication.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/UsersWxService.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/Vo/usersWxVo.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/Vo/UsersWxVo.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/Ao/CodeAndInfo.java" />
+        <option value="$PROJECT_DIR$/xydl-users/pom.xml" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersWx.java" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/XydlRobotApplication.java" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/Util.java" />
+        <option value="$PROJECT_DIR$/xydl-robot/pom.xml" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/TulingRobot.java" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/controller/RobotController.java" />
+        <option value="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/JSONResult.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/UsersWxServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/utils/JSONResult.java" />
+        <option value="$PROJECT_DIR$/xydl-car/pom.xml" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/config/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/RedisService.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/RedisService.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/RedisService.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/controller/CarController.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/CarService.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/JSONResult.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/XydlCarApplication.java" />
+        <option value="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/CarServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/FileService.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/JSONResult.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/XydlAdminApplication.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/impl/FileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/resources/mapper/FileInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/controller/FileController.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/Java_Tools.java" />
+        <option value="$PROJECT_DIR$/xydl-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/FileTool.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1059" />
+    <option name="height" value="554" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549124403827" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL&#10;TSQL" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/fastdfs-client-java-master" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.njit.xydl.admin.utils" />
+      <recent name="com.njit.xydl.car.utils" />
+      <recent name="com.njit.xydl.robot.utils" />
+      <recent name="com.njit.xydl.provider2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-admin\src\main\resources" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-admin\src\main\resources\mapper" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-admin\src\main\java\com\njit\xydl\admin\entity" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-admin\src\main\java\com\njit\xydl\admin\dao" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-car\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.XydlAdminApplication">
+    <configuration name="XydlProvider2Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.njit.xydl.provider2.XydlProvider2Application" />
+      <module name="xydl-provider2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.njit.xydl.provider2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="book" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.book.BookApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bookstore" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.bookstore.BookstoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetwayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="getway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.getway.GetwayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="reading" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.reading.ReadingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.admin.XydlAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlAtlasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xydl-atlas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.njit.xydl.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.map.XydlAtlasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlCarApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-car" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.car.XydlCarApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlConsumer2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-consumer2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.consumer2.XydlConsumer2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.consumer.XydlConsumerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlEurekaService1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xydl-eureka-service-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.njit.xydl.eureka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.eureka.XydlEurekaService1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlEurekaService2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xydl-eureka-service-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.njit.xydl.eureka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.eureka.XydlEurekaService2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlEurekaService3Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-eureka-service-3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.eureka.XydlEurekaService3Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlEurekaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-eureka-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.eureka.XydlEurekaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlProvider2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-provider2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.provider2.XydlProvider2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.provider.XydlProviderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlRobotApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-robot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.robot.XydlRobotApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.user.XydlUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlUsersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-users" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.users.XydlUsersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlZuulServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xydl-zuul-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.njit.xydl.zuul.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.zuul.XydlZuulServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.XydlProvider2Application" />
+      <item itemvalue="Spring Boot.XydlUsersApplication" />
+      <item itemvalue="Spring Boot.XydlRobotApplication" />
+      <item itemvalue="Spring Boot.XydlCarApplication" />
+      <item itemvalue="Spring Boot.XydlConsumer2Application" />
+      <item itemvalue="Spring Boot.GetwayApplication" />
+      <item itemvalue="Spring Boot.ReadingApplication" />
+      <item itemvalue="Spring Boot.XydlEurekaServiceApplication" />
+      <item itemvalue="Spring Boot.XydlConsumerApplication" />
+      <item itemvalue="Spring Boot.BookApplication" />
+      <item itemvalue="Spring Boot.BookstoreApplication" />
+      <item itemvalue="Spring Boot.XydlProvider2Application" />
+      <item itemvalue="Spring Boot.XydlProviderApplication" />
+      <item itemvalue="Spring Boot.XydlUserApplication" />
+      <item itemvalue="Spring Boot.XydlEurekaService3Application" />
+      <item itemvalue="Spring Boot.XydlEurekaService1Application" />
+      <item itemvalue="Spring Boot.XydlEurekaService2Application" />
+      <item itemvalue="Spring Boot.XydlZuulServiceApplication" />
+      <item itemvalue="Spring Boot.XydlAtlasApplication" />
+      <item itemvalue="Spring Boot.XydlAdminApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.XydlZuulServiceApplication" />
+        <item itemvalue="Spring Boot.XydlEurekaService1Application" />
+        <item itemvalue="Spring Boot.XydlAtlasApplication" />
+        <item itemvalue="Application.XydlProvider2Application" />
+        <item itemvalue="Spring Boot.XydlEurekaService2Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e75f22b9-4e3a-4e25-ad25-5b82437db444" name="Default" comment="" />
+      <created>1547168432374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547168432374</updated>
+      <workItem from="1547168447936" duration="18307000" />
+      <workItem from="1547218037213" duration="15489000" />
+      <workItem from="1547303426312" duration="3409000" />
+      <workItem from="1547365501053" duration="17201000" />
+      <workItem from="1547532142186" duration="2925000" />
+      <workItem from="1547536116023" duration="4235000" />
+      <workItem from="1547995956274" duration="24701000" />
+      <workItem from="1548488300804" duration="6810000" />
+      <workItem from="1548511117322" duration="994000" />
+      <workItem from="1548516317086" duration="5365000" />
+      <workItem from="1548641890034" duration="10186000" />
+      <workItem from="1549011931378" duration="6626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="116248000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22239032" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32459018" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32459018" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32980332" />
+      <window_info anchor="right" id="Maven" order="10" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/dao/CarMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-eureka-service-1/src/main/java/com/njit/xydl/eureka/XydlEurekaService1Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/CarServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2855#2856#0" expanded="true" />
+            <element signature="e#2879#2880#0" expanded="true" />
+            <element signature="e#2947#2948#0" expanded="true" />
+            <element signature="e#2971#2972#0" expanded="true" />
+            <element signature="e#3034#3035#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+            <element signature="e#3109#3110#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3193#3194#0" expanded="true" />
+            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="e#3291#3292#0" expanded="true" />
+            <element signature="e#3348#3349#0" expanded="true" />
+            <element signature="e#3411#3412#0" expanded="true" />
+            <element signature="e#3438#3439#0" expanded="true" />
+            <element signature="e#3527#3528#0" expanded="true" />
+            <element signature="e#3551#3552#0" expanded="true" />
+            <element signature="e#3631#3632#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3727#3728#0" expanded="true" />
+            <element signature="e#3751#3752#0" expanded="true" />
+            <element signature="e#3814#3815#0" expanded="true" />
+            <element signature="e#3838#3839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-atlas/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="46" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/controller/CarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UsersScController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/controller/AtlasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/entity/FileInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/dao/FileInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/FileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-car/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="22" column="14" selection-end-line="34" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/impl/FileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/XydlAdminApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/resources/mapper/FileInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/resources/fdfs_client.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/FileTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/src/main/java/com/njit/xydl/book/BookApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/src/main/java/com/njit/xydl/bookstore/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/src/main/java/com/njit/xydl/book/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getway/src/main/java/com/njit/xydl/getway/GetwayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getway/src/main/java/com/njit/xydl/getway/SimpleFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reading/src/main/java/com/njit/xydl/reading/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reading/src/main/java/com/njit/xydl/reading/service/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/XydlProviderConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/XydlConsumerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/XydlConsumer2Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-provider/src/main/java/com/njit/xydl/provider/XydlProviderApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-provider/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-provider2/src/main/java/com/njit/xydl/provider2/XydlProvider2Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-provider2/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/XydlUserApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-user/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/XydlZuulServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>springcloud-xydl</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

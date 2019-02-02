@@ -42,6 +42,7 @@ public class CarController {
             List<Map<String, Double>> list = carService.getAllCarLocation();
             return JSONResult.ok(list);
         }catch (Exception e){
+            e.printStackTrace();
             return JSONResult.errorMsg(e.getMessage());
         }
     }

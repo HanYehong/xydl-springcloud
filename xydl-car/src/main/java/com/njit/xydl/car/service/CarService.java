@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public interface CarService {
 
@@ -14,6 +15,8 @@ public interface CarService {
     Map<String,Double> getCarLocation(int number);
 
     List<Map<String,Double>> getAllCarLocation();
+
+    Set<Object> getAllCarName();
 
     long countByExample(CarExample example);
 

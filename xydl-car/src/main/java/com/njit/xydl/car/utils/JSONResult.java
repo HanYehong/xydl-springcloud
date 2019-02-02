@@ -20,7 +20,7 @@ public class JSONResult {
     private String msg;
 
     // 响应中的数据
-    private Object data;
+    private Object content;
     
     private String ok;	// 不使用
 
@@ -63,13 +63,13 @@ public class JSONResult {
     public JSONResult(Integer status, String msg, Object data) {
         this.status = status;
         this.msg = msg;
-        this.data = data;
+        this.content = data;
     }
 
     public JSONResult(Object data) {
         this.status = 200;
         this.msg = "OK";
-        this.data = data;
+        this.content = data;
     }
 
     public Boolean isOK() {
@@ -93,11 +93,11 @@ public class JSONResult {
     }
 
     public Object getData() {
-        return data;
+        return content;
     }
 
     public void setData(Object data) {
-        this.data = data;
+        this.content = data;
     }
 
 	public String getOk() {

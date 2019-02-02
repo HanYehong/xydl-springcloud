@@ -27,3 +27,9 @@ spring:
         min-idle: 0
         max-active: 8
         max-wait: -1
+
+#注册到eureka中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/

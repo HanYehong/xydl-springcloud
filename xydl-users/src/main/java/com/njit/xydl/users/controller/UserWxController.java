@@ -1,14 +1,12 @@
 package com.njit.xydl.users.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.njit.xydl.users.entity.Ao.CodeAndInfo;
+import com.njit.xydl.robot.utils.JSONResult;
 import com.njit.xydl.users.entity.UsersWx;
 import com.njit.xydl.users.entity.Vo.UsersWxVo;
 import com.njit.xydl.users.service.UsersWxService;
 import com.njit.xydl.users.utils.HttpUtil;
-import com.njit.xydl.users.utils.JSONResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

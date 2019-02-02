@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="getway" />
+        <module name="reading" />
+        <module name="springcloud-xydl" />
+        <module name="xydl-admin" />
+        <module name="xydl-atlas" />
+        <module name="xydl-car" />
+        <module name="xydl-consumer" />
+        <module name="xydl-consumer2" />
+        <module name="xydl-data-api" />
+        <module name="xydl-eureka-service" />
+        <module name="xydl-eureka-service-1" />
+        <module name="xydl-eureka-service-2" />
+        <module name="xydl-eureka-service-3" />
+        <module name="xydl-robot" />
+        <module name="xydl-user" />
+        <module name="xydl-users" />
+        <module name="xydl-zuul-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="book" target="1.8" />
+      <module name="bookstore" target="1.8" />
+      <module name="springcloud-xydl" target="1.5" />
+      <module name="xydl-provider" target="1.8" />
+      <module name="xydl-provider2" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bookstore" options="-parameters" />
+      <module name="getway" options="-parameters" />
+      <module name="reading" options="-parameters" />
+      <module name="xydl-admin" options="-parameters" />
+      <module name="xydl-atlas" options="-parameters" />
+      <module name="xydl-car" options="-parameters" />
+      <module name="xydl-consumer" options="-parameters" />
+      <module name="xydl-consumer2" options="-parameters" />
+      <module name="xydl-eureka-service" options="-parameters" />
+      <module name="xydl-eureka-service-1" options="-parameters" />
+      <module name="xydl-eureka-service-2" options="-parameters" />
+      <module name="xydl-eureka-service-3" options="-parameters" />
+      <module name="xydl-provider" options="-parameters" />
+      <module name="xydl-provider2" options="-parameters" />
+      <module name="xydl-robot" options="-parameters" />
+      <module name="xydl-user" options="-parameters" />
+      <module name="xydl-users" options="-parameters" />
+      <module name="xydl-zuul-service" options="-parameters" />
+    </option>
+  </component>
+</project>

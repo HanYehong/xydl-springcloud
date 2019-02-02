@@ -41,9 +41,16 @@ public class CarServiceImpl implements CarService {
     @Override
     public Map<String, Double> getCarLocation(int number) {
         Map<String, Double> map = new HashMap<>();
-        map.put("longitude", Double.parseDouble((String)redis.hmGet("car"+number,"longitude")));
-        map.put("laitude", Double.parseDouble((String)redis.hmGet("car"+number,"laitude")));
-        return map.get("longitude") == null || map.get("laitude") == null ? null : map;
+        String lon = "", la = "";
+        if( (lon = (String)redis.hmGet("car"+number,"longitude")) == null){
+            return null;
+        }
+        if( (la = (String)redis.hmGet("car"+number,"laitude")) == null){
+            return null;
+        }
+        map.put("longitude", Double.parseDouble(lon));
+        map.put("laitude", Double.parseDouble(la));
+        return map;
     }
 
     /**
@@ -53,12 +60,37 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Map<String, Double>> getAllCarLocation() {
         List<Map<String, Double>> all = new ArrayList<>();
-        List<Car> list = selectByExample(null);
-        for(Iterator<Car> iterator = list.iterator(); iterator.hasNext(); ){
-            Map<String, Double> map = getCarLocation(iterator.next().getCarNumber());
+        Set<Object> name = getAllCarName();
+        for(Iterator<Object> iterator = name.iterator(); iterator.hasNext(); ){
+            Map<String, Double> map = getCarLocation(Integer.parseInt((String)iterator.next()));
             if(map != null) all.add(map);
         }
         return all;
+    }
+
+    /**
+     * 从缓存中读取所有小车编号
+     * 若缓存中不存在则从数据库中查询 再将数据放到缓存中
+     * @return
+     */
+    @Override
+    public Set<Object> getAllCarName() {
+        Set<Object> set;
+        if( (set = redis.setMembers("cars")).size() != 0){
+            System.out.println("从缓存中取数据");
+            System.out.println(set.toString());
+            System.out.println(set.size());
+            return set;
+        }
+        System.out.println("从数据库查询");
+        List<Car> list = selectByExample(null);
+        set = new HashSet<>();
+        for(Iterator<Car> iterator = list.iterator(); iterator.hasNext(); ){
+            String s = String.valueOf(iterator.next().getCarNumber());
+            set.add(s);
+            redis.add("cars",s);
+        }
+        return set;
     }
 
     @Override
