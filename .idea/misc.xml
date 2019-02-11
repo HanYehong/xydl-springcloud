@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/xydl-eureka-service/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-user/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-consumer2/pom.xml" />
@@ -16,7 +15,6 @@
         <option value="$PROJECT_DIR$/xydl-eureka-service-3/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-zuul-service/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-map/pom.xml" />
-        <option value="$PROJECT_DIR$/xydl-data-api/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-atlas/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-users/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-robot/pom.xml" />

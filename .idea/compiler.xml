@@ -14,8 +14,6 @@
         <module name="xydl-car" />
         <module name="xydl-consumer" />
         <module name="xydl-consumer2" />
-        <module name="xydl-data-api" />
-        <module name="xydl-eureka-service" />
         <module name="xydl-eureka-service-1" />
         <module name="xydl-eureka-service-2" />
         <module name="xydl-eureka-service-3" />
@@ -29,6 +27,8 @@
       <module name="book" target="1.8" />
       <module name="bookstore" target="1.8" />
       <module name="springcloud-xydl" target="1.5" />
+      <module name="xydl-data-api" target="1.5" />
+      <module name="xydl-eureka-service" target="1.8" />
       <module name="xydl-provider" target="1.8" />
       <module name="xydl-provider2" target="1.8" />
     </bytecodeTargetLevel>

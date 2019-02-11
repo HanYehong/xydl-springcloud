@@ -23,7 +23,7 @@ public class FileTool {
     StorageServer storageServer = null;
 
     // 文件上传
-    public void testUpload() {
+    public String upload() {
         try {
             // 初始化配置文件
             ClientGlobal.init("fdfs_client.conf");
@@ -36,16 +36,17 @@ public class FileTool {
             // 上传文件，返回文件标识
             String index = storageClient1.upload_file1(local, null, null);
             // 查看标识
-            System.out.println(index);
+            return index;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (MyException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     // 文件下载
-    public void testDownload() {
+    public void download() {
         try {
             ClientGlobal.init("fdfs_client.conf");
             trackerClient = new TrackerClient();
@@ -63,7 +64,7 @@ public class FileTool {
     }
 
     // 文件删除
-    public void testDelete() {
+    public void delete() {
         try {
             ClientGlobal.init("fdfs_client.conf");
             trackerClient = new TrackerClient();
@@ -84,7 +85,7 @@ public class FileTool {
     }
 
     // 文件信息
-    public void testGetFileInfo() {
+    public void getFileInfo() {
         try {
             ClientGlobal.init("fdfs_client.conf");
             trackerClient = new TrackerClient();

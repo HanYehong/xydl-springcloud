@@ -1,7 +1,7 @@
 package com.njit.xydl.robot.controller;
 
 import com.njit.xydl.robot.utils.JSONResult;
-import com.njit.xydl.robot.utils.TulingRobot;
+import com.njit.xydl.robot.service.TulingRobot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
