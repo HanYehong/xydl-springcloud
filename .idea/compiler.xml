@@ -17,6 +17,7 @@
         <module name="xydl-eureka-service-1" />
         <module name="xydl-eureka-service-2" />
         <module name="xydl-eureka-service-3" />
+        <module name="xydl-life" />
         <module name="xydl-robot" />
         <module name="xydl-user" />
         <module name="xydl-users" />
@@ -47,6 +48,7 @@
       <module name="xydl-eureka-service-1" options="-parameters" />
       <module name="xydl-eureka-service-2" options="-parameters" />
       <module name="xydl-eureka-service-3" options="-parameters" />
+      <module name="xydl-life" options="-parameters" />
       <module name="xydl-provider" options="-parameters" />
       <module name="xydl-provider2" options="-parameters" />
       <module name="xydl-robot" options="-parameters" />

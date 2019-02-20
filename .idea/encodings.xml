@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
-    <file url="file://$PROJECT_DIR$/book" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bookstore" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/getway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/reading" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-admin" charset="UTF-8" />
@@ -10,12 +8,10 @@
     <file url="file://$PROJECT_DIR$/xydl-car" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-consumer2" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xydl-eureka-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-eureka-service-1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-eureka-service-2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-eureka-service-3" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xydl-provider" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xydl-provider2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xydl-life" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-robot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-user" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xydl-users" charset="UTF-8" />
