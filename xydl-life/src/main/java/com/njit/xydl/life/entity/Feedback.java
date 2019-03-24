@@ -3,24 +3,26 @@ package com.njit.xydl.life.entity;
 import java.util.Date;
 
 public class Feedback {
-    private String id;
+    private Byte id;
 
     private String content;
 
-    private String contactWay;
+    private String contact_way;
 
-    private String man;
+    private String commitor;
 
-    private Date createTime;
+    private Date create_time;
 
-    private Date updateTime;
+    private Date update_time;
 
-    public String getId() {
+    private Integer is_delete;
+
+    public Byte getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Byte id) {
+        this.id = id;
     }
 
     public String getContent() {
@@ -31,35 +33,43 @@ public class Feedback {
         this.content = content == null ? null : content.trim();
     }
 
-    public String getContactWay() {
-        return contactWay;
+    public String getContact_way() {
+        return contact_way;
     }
 
-    public void setContactWay(String contactWay) {
-        this.contactWay = contactWay == null ? null : contactWay.trim();
+    public void setContact_way(String contact_way) {
+        this.contact_way = contact_way == null ? null : contact_way.trim();
     }
 
-    public String getMan() {
-        return man;
+    public String getCommitor() {
+        return commitor;
     }
 
-    public void setMan(String man) {
-        this.man = man == null ? null : man.trim();
+    public void setCommitor(String commitor) {
+        this.commitor = commitor == null ? null : commitor.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
+    }
+
+    public Integer getIs_delete() {
+        return is_delete;
+    }
+
+    public void setIs_delete(Integer is_delete) {
+        this.is_delete = is_delete;
     }
 }

@@ -5,6 +5,7 @@ import com.njit.xydl.map.entity.vo.AtlasVo;
 import com.njit.xydl.map.entity.vo.CarMarkersVo;
 import com.njit.xydl.map.service.AtlasService;
 import com.njit.xydl.map.utils.JSONResult;
+import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,9 +25,9 @@ public class AtlasController {
     private int count = 0;
 
     @GetMapping("/find/{mapID}")
-    public JSONResult selectByKey(@PathVariable("mapID") String id){
+    public Response selectByKey(@PathVariable("mapID") String id){
    //     System.out.println("hi");
-        return JSONResult.ok(atlasService.selectByPrimaryKey(id));
+        return Response.ok(atlasService.selectByPrimaryKey(id));
     }
 
     @GetMapping("/carMarkers")
