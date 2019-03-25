@@ -2,6 +2,8 @@ package com.njit.xydl.life.dao;
 
 import com.njit.xydl.life.entity.Express;
 
+import java.util.List;
+
 public interface ExpressMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface ExpressMapper {
     int updateByPrimaryKeySelective(Express record);
 
     int updateByPrimaryKey(Express record);
+
+    List<Express> selectAllUnAccept();
 }
