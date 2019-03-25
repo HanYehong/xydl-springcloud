@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e75f22b9-4e3a-4e25-ad25-5b82437db444" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/controller/mark.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/SizeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/StatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0738631b-7d83-463b-875e-cd735a7d9cee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Express.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Express.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Feedback.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,19 +62,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/resources/mapper/ExpressMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -180,29 +180,21 @@
           <expand>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -210,7 +202,6 @@
             </path>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -219,50 +210,12 @@
             </path>
             <path>
               <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="life" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="life" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
               <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="life" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springcloud-xydl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springcloud-xydl" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -280,7 +233,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553426289706" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553530179160" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL&#10;TSQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="H:/WebStorm/xydl-admin-vue" />
@@ -292,6 +245,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.njit.xydl.life.utils" />
       <recent name="com.njit.xydl.admin.utils" />
@@ -589,16 +545,15 @@
       <workItem from="1553351195221" duration="2406000" />
       <workItem from="1553424063158" duration="2049000" />
       <workItem from="1553426409900" duration="8358000" />
-      <workItem from="1553528013317" duration="852000" />
+      <workItem from="1553528013317" duration="1020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146617000" />
+    <option name="totallyTimeSpent" value="146785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24432677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -641,15 +596,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xydl-provider2/src/main/java/com/njit/xydl/provider2/XydlProvider2Application.java" />
-    <entry file="file://$PROJECT_DIR$/xydl-provider2/src/main/resources/application.yml" />
-    <entry file="file://$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/XydlUserApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xydl-user/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -947,10 +893,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xydl-life/src/main/resources/mapper/ExpressMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="303">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/SizeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/StatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/mark">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
