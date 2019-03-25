@@ -1,7 +1,10 @@
 package com.njit.xydl.life.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class Feedback {
     private Byte id;
 
