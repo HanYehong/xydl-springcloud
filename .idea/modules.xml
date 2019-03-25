@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/springcloud-xydl.iml" filepath="$PROJECT_DIR$/springcloud-xydl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xydl-life/xydl-life.iml" filepath="$PROJECT_DIR$/xydl-life/xydl-life.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/xydl-springcloud.iml" filepath="$PROJECT_DIR$/.idea/xydl-springcloud.iml" />
     </modules>
   </component>
 </project>
