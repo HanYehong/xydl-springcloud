@@ -31,7 +31,7 @@ public class WebConfigurer implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		// 拦截除了/login/getSession之外的所有请求
-		registry.addInterceptor(checkTokenInterceptor).addPathPatterns("/**").excludePathPatterns("/login/getSession");
+		registry.addInterceptor(checkTokenInterceptor).addPathPatterns("/**").excludePathPatterns("/login/getToken");
 		WebMvcConfigurer.super.addInterceptors(registry);
 	}
 }
