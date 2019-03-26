@@ -1,14 +1,12 @@
 package com.njit.xydl.users.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.njit.xydl.users.controller.LoginController;
 import com.njit.xydl.users.controller.request.LoginRequest;
 import com.njit.xydl.users.exception.ValidException;
 import com.njit.xydl.users.service.LoginService;
 import com.njit.xydl.users.service.bo.SessionBO;
 import com.njit.xydl.users.util.HttpUtil;
-import com.njit.xydl.users.util.MD5Util;
-import com.yehong.han.config.response.Response;
+import com.njit.xydl.users.util.Md5Util;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,7 +61,7 @@ public class LoginServiceImpl implements LoginService {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMM-ddHH-mmss");
 
-		String token = MD5Util.encrypt(result.getSession_key() + "-" + result.getOpenId() + "-" + sdf.format(new Date()));
+		String token = Md5Util.encrypt(result.getSession_key() + "-" + result.getOpenId() + "-" + sdf.format(new Date()));
 
 		return token;
 	}

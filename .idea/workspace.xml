@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e75f22b9-4e3a-4e25-ad25-5b82437db444" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/Md5Util.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="193">
+              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,10 +141,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/MD5Util.java">
+        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/Md5Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+            <state relative-caret-position="323">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -162,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+            <state relative-caret-position="247">
+              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -194,7 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/XydlAdminApplication.java" />
         <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/impl/FileServiceImpl.java" />
         <option value="$PROJECT_DIR$/xydl-admin/src/main/resources/mapper/FileInfoMapper.xml" />
         <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/controller/FileController.java" />
@@ -238,13 +239,14 @@
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/CustomeInterceptor.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/CheckTokenInterceptor.java" />
-        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/MD5Util.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/bo/SessionBO.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/LoginService.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java" />
+        <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/Md5Util.java" />
       </list>
     </option>
   </component>
@@ -436,39 +438,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -503,7 +473,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553594927622" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553597879173" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL&#10;TSQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../common-webconfig" />
@@ -513,7 +483,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -822,13 +792,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165595000" />
+    <option name="totallyTimeSpent" value="166803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1652452" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -838,7 +808,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.324295" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.324295" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1164,20 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/UsersWxService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1211,16 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -1241,10 +1187,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/Md5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

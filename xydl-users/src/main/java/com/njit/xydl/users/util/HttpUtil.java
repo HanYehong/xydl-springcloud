@@ -18,6 +18,9 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
+/**
+ * @author yehong.han
+ */
 public class HttpUtil {
 
     private static final String Charset = "utf-8";

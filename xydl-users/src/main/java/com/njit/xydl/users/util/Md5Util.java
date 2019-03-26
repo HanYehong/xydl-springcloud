@@ -6,7 +6,7 @@ import java.security.MessageDigest;
  * @author yehong.han
  * @date 2019/3/26
  */
-public class MD5Util {
+public class Md5Util {
 
 	private static char hexDigists[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d', 'e','f'};
 
