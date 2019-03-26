@@ -1,5 +1,6 @@
 package com.njit.xydl.life.controller;
 
+import com.njit.xydl.life.enums.StatusEnum;
 import com.njit.xydl.life.service.ExpressService;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,16 @@ public class ExpressController {
 
     @PostMapping("/listUnAcceptOrder")
     public Response listUnAcceptOrder() {
-        return Response.ok(expressService.listAllExpressOrder());
+        return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.WAIT_ACCEPT.getCode()));
+    }
+
+    @PostMapping("/listCompleteOrder")
+    public Response listCompleteOrder(String openId) {
+        return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.COMPLETE.getCode()));
+    }
+
+    @PostMapping("/test")
+    public Response test() {
+        return Response.ok();
     }
 }

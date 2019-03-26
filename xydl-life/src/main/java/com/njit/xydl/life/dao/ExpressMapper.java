@@ -17,5 +17,5 @@ public interface ExpressMapper {
 
     int updateByPrimaryKey(Express record);
 
-    List<Express> selectAllUnAccept();
+    List<Express> selectExpressOrderByStatus(int status);
 }
