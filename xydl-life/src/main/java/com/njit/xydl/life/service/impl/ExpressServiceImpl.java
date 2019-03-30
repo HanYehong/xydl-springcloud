@@ -19,7 +19,7 @@ public class ExpressServiceImpl implements ExpressService {
     private ExpressMapper expressMapper;
 
     @Override
-    public List<Express> listAllExpressOrder() {
-        return expressMapper.selectAllUnAccept();
+    public List<Express> listExpressOrderByStatus(int status) {
+        return expressMapper.selectExpressOrderByStatus(status);
     }
 }

@@ -11,22 +11,19 @@ spring:
   application:
     name: xydl-users
 
-#微信小程序端的配置信息，用以获取用户的openId
 wx:
   appId: "wx357d84bfbb36170b"
   appSecret: "94ecaf880d0c1ea590f8f7e90e4fde41"
   grantType: "authorization_code"
   requestUrl: "https://api.weixin.qq.com/sns/jscode2session"
 
-#mybatis的配置信息
 mybatis:
   typeAliasesPackage: com.njit.xydl.users.entity
   mapperLocations: classpath:mapper/*.xml
   mapperScanPackage: com.njit.xydl.users.dao
   configLocation: classpath:mybatis-config.xml
 
-#注册到eureka中心
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/

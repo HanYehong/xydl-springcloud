@@ -1,4 +1,4 @@
-package com.njit.xydl.users.utils;
+package com.njit.xydl.users.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,10 +18,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
+/**
+ * @author yehong.han
+ */
 public class HttpUtil {
 
     private static final String Charset = "utf-8";
-
 
     /**
      * 发送请求，如果失败，会返回null
@@ -61,12 +63,13 @@ public class HttpUtil {
                     e.printStackTrace();
                 } finally {
                     // 关闭流
-                    if (in != null)
+                    if (in != null) {
                         try {
                             in.close();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
+                    }
                 }
 
                 return buffer.toString();
@@ -110,8 +113,9 @@ public class HttpUtil {
 
                 } finally {
                     // 关闭流
-                    if (in != null)
+                    if (in != null) {
                         in.close();
+                    }
                 }
 
                 return buffer.toString();
@@ -150,8 +154,9 @@ public class HttpUtil {
                     }
 
                 } finally {
-                    if (in != null)
+                    if (in != null) {
                         in.close();
+                    }
                 }
 
                 return buffer.toString();

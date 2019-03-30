@@ -26,11 +26,11 @@
     special_attention, order_deadline_date, price, acceptor, status, accept_time, create_time, 
     update_time, is_delete
   </sql>
-  <select id="selectAllUnAccept">
+  <select id="selectExpressOrderByStatus">
     select
     <include refid="Base_Column_List" />
     from express_order
-    where status = 0 and is_delete = 0
+    where status = #{status} and is_delete = 0
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 

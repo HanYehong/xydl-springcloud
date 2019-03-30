@@ -1,9 +1,13 @@
 package com.njit.xydl.users.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UsersWx {
-    private String id;
+public class WechatUser implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
 
     private String openId;
 
@@ -17,20 +21,26 @@ public class UsersWx {
 
     private String country;
 
-    private Boolean gender;
+    private Integer gender;
 
     private String language;
+
+    private String studentId;
+
+    private Date authenticateTime;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getId() {
+    private Integer isDelete;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getOpenId() {
@@ -81,11 +91,11 @@ public class UsersWx {
         this.country = country == null ? null : country.trim();
     }
 
-    public Boolean getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(Boolean gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
@@ -95,6 +105,22 @@ public class UsersWx {
 
     public void setLanguage(String language) {
         this.language = language == null ? null : language.trim();
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId == null ? null : studentId.trim();
+    }
+
+    public Date getAuthenticateTime() {
+        return authenticateTime;
+    }
+
+    public void setAuthenticateTime(Date authenticateTime) {
+        this.authenticateTime = authenticateTime;
     }
 
     public Date getCreateTime() {
@@ -113,20 +139,11 @@ public class UsersWx {
         this.updateTime = updateTime;
     }
 
-    @Override
-    public String toString() {
-        return "UsersWx{" +
-                "id='" + id + '\'' +
-                ", openId='" + openId + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", avatarUrl='" + avatarUrl + '\'' +
-                ", city='" + city + '\'' +
-                ", province='" + province + '\'' +
-                ", country='" + country + '\'' +
-                ", gender=" + gender +
-                ", language='" + language + '\'' +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 }

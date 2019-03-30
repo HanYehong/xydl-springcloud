@@ -2,8 +2,8 @@ package com.njit.xydl.users.entity;
 
 import java.util.Date;
 
-public class UsersSc {
-    private String id;
+public class SchoolUser {
+    private Long id;
 
     private String studentId;
 
@@ -15,18 +15,20 @@ public class UsersSc {
 
     private String major;
 
-    private String theClass;
+    private String group;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getId() {
+    private Integer isDelete;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getStudentId() {
@@ -69,12 +71,12 @@ public class UsersSc {
         this.major = major == null ? null : major.trim();
     }
 
-    public String getTheClass() {
-        return theClass;
+    public String getGroup() {
+        return group;
     }
 
-    public void setTheClass(String theClass) {
-        this.theClass = theClass == null ? null : theClass.trim();
+    public void setGroup(String group) {
+        this.group = group == null ? null : group.trim();
     }
 
     public Date getCreateTime() {
@@ -91,5 +93,13 @@ public class UsersSc {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 }
