@@ -2,9 +2,9 @@ server:
   port: 6001
 
 mybatis:
-  typeAliasesPackage: com.njit.xydl.map.entity
-  mapperLocations: classpath:mapper/*.xml
-  mapperScanPackage: com.njit.xydl.map.dao
+  typeAliasesPackage: com.njit.xydl.atlas.*.entity
+  mapperLocations: classpath:mapper/*/*.xml
+  mapperScanPackage: com.njit.xydl.atlas.*.dao
   configLocation: classpath:mybatis-config.xml
 
 spring:
@@ -17,7 +17,7 @@ spring:
   application:
     name: xydl-atlas
 
-#æ³¨å†Œåˆ°eurekaä¸­å¿ƒ
+#×¢²áµ½eurekaÖÐÐÄ
 eureka:
   client:
     service-url:
