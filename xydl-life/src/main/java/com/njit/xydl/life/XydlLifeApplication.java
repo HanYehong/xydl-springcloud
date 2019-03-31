@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
-@MapperScan("com.njit.xydl.life.dao")
+@MapperScan("com.njit.xydl.life.*.dao")
 @SpringBootApplication
 public class XydlLifeApplication {
 

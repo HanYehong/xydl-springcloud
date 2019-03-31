@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.yehong.han.config.cache.RedisHelper;
+import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.exception.ValidException;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.apache.commons.lang.StringUtils;
@@ -35,7 +37,7 @@ public class AuthorizeFilter extends ZuulFilter {
     private static final String TOKEN = "token";
 
     @Override
-    public Object run() {
+    public Object run() throws GatewayException {
 
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
@@ -46,7 +48,10 @@ public class AuthorizeFilter extends ZuulFilter {
 
         if (token == null || StringUtils.isBlank(token) || verifyToken(token)) {
 
-            unAuthorizedResponse(context);
+            context.setSendZuulResponse(false);
+            throw new GatewayException(Status.UN_AUTHORIZE);
+
+//            unAuthorizedResponse(context);
 
         } else {
 

@@ -15,8 +15,9 @@ public class XydlZuulServiceApplication {
     }
 
     @Bean
-    public AuthorizeFilter myZuulFilter() {
+    public AuthorizeFilter authorizeFilter() {
         return new AuthorizeFilter();
     }
+
 }
 
