@@ -1,8 +1,12 @@
 package com.njit.xydl.users.dao;
 
 import com.njit.xydl.users.entity.WechatUser;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * @author HanYehong
+ */
 public interface WechatUserMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -16,5 +20,10 @@ public interface WechatUserMapper {
 
     int updateByPrimaryKey(WechatUser record);
 
+    /**
+     * 根据openId查找用户
+     * @param openId
+     * @return
+     */
     WechatUser selectByOpenId(@Param("openId") String openId);
 }

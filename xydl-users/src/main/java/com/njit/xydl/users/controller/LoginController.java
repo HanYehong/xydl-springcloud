@@ -4,10 +4,7 @@ import com.njit.xydl.users.controller.request.LoginRequest;
 import com.njit.xydl.users.service.LoginService;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 

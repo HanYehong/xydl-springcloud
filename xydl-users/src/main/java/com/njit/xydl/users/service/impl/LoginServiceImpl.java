@@ -10,7 +10,6 @@ import com.njit.xydl.users.service.bo.SessionBO;
 import com.njit.xydl.users.util.HttpUtil;
 import com.njit.xydl.users.util.Md5Util;
 import com.yehong.han.config.cache.RedisHelper;
-import com.yehong.han.config.net.SerializationUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,12 +47,13 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private WechatUserMapper wechatUserMapper;
 
+	private static final Integer EXPIRE_TIME = 3600 * 48;
+
 	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public String login(LoginRequest param) throws IOException {
 
-		logger.info("获得用户请求参数，进行登录<<<<<");
-		logger.info(param.toString());
+		logger.info("[info] 获得用户请求参数，进行登录 <<< " + param.toString());
 
 		if (param == null) {
 			throw new ValidException("请勿传空参");
@@ -76,24 +76,27 @@ public class LoginServiceImpl implements LoginService {
 		WechatUser newUser = param.getWechatUser();
 
 		if (dbUser != null) {
+
 			updateUserInfo(dbUser, newUser);
+
 			int ret = wechatUserMapper.updateByPrimaryKeySelective(newUser);
 			if (ret < 1) {
 				logger.error("[error] 登录时更新用户信息失败 <<<");
 			}
 
-			RedisHelper.getRedisUtil().set(token, result.getOpenId());
-			return token;
-		}
+		} else {
 
-		newUser.setOpenId(result.getOpenId());
-		int ret = wechatUserMapper.insertSelective(newUser);
-		if (ret < 1) {
-			logger.error("[error] 插入新用户失败 <<<");
-			return "";
+			newUser.setOpenId(result.getOpenId());
+
+			int ret = wechatUserMapper.insertSelective(newUser);
+			if (ret < 1) {
+				logger.error("[error] 插入新用户失败 <<<");
+				return "";
+			}
 		}
 
 		RedisHelper.getRedisUtil().set(token, result.getOpenId());
+		RedisHelper.getRedisUtil().expire(token, EXPIRE_TIME);
 		return token;
 	}
 
