@@ -1,4 +1,4 @@
-package com.njit.xydl.users.controller.request;
+package com.njit.xydl.users.controller.dto;
 
 import com.njit.xydl.users.entity.WechatUser;
 
@@ -6,7 +6,7 @@ import com.njit.xydl.users.entity.WechatUser;
  * @author yehong.han
  * @date 2019/3/26
  */
-public class LoginRequest {
+public class TokenDTO {
 
 	private String code;
 

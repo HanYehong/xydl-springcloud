@@ -12,10 +12,18 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, student_id, name, sex, academic, major, group, create_time, update_time, is_delete
+    id, student_id, name, sex, academic, major, group, create_time, update_time, is_delete, 
+    password
   </sql>
+  <select id="selectByStudentId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from school_user
+    where student_id = #{studentId} and is_delete = 0
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -29,12 +37,12 @@
   <insert id="insert" parameterType="com.njit.xydl.users.entity.SchoolUser">
     insert into school_user (id, student_id, name, 
       sex, academic, major, group, 
-      create_time, update_time, is_delete
-      )
+      create_time, update_time, is_delete, 
+      password)
     values (#{id,jdbcType=BIGINT}, #{studentId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{sex,jdbcType=BIT}, #{academic,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, #{group,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}
-      )
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}, 
+      #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.njit.xydl.users.entity.SchoolUser">
     insert into school_user
@@ -69,6 +77,9 @@
       <if test="isDelete != null">
         is_delete,
       </if>
+      <if test="password != null">
+        password,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -100,6 +111,9 @@
       </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -133,6 +147,9 @@
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -146,7 +163,8 @@
       group = #{group,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      is_delete = #{isDelete,jdbcType=INTEGER}
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

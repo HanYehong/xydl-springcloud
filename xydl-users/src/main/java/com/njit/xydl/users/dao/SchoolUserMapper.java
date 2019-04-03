@@ -1,6 +1,7 @@
 package com.njit.xydl.users.dao;
 
 import com.njit.xydl.users.entity.SchoolUser;
+import org.apache.ibatis.annotations.Param;
 
 public interface SchoolUserMapper {
     int deleteByPrimaryKey(Long id);
@@ -14,4 +15,6 @@ public interface SchoolUserMapper {
     int updateByPrimaryKeySelective(SchoolUser record);
 
     int updateByPrimaryKey(SchoolUser record);
+
+    SchoolUser selectByStudentId(@Param("studentId") String studentId);
 }

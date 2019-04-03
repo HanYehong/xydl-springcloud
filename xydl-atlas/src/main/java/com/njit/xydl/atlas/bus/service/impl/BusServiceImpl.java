@@ -39,7 +39,7 @@ public class BusServiceImpl implements BusService {
 
         RedisHelper cache = RedisHelper.getRedisUtil();
 
-        for (BusEnum busEnum : BusEnum) {
+        for (BusEnum busEnum : BusEnum.values()) {
             PointerRequest pointer =
                     (PointerRequest) cache.getObject(CacheKey.BUS_PRE + busEnum.getCode());
             if (pointer != null) {

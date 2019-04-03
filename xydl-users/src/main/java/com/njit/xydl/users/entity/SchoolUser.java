@@ -23,6 +23,8 @@ public class SchoolUser {
 
     private Integer isDelete;
 
+    private String password;
+
     public Long getId() {
         return id;
     }
@@ -101,5 +103,13 @@ public class SchoolUser {
 
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 }
