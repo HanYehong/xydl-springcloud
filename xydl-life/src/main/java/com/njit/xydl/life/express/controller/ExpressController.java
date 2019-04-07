@@ -2,6 +2,7 @@ package com.njit.xydl.life.express.controller;
 
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.express.service.ExpressService;
+import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +26,20 @@ public class ExpressController {
     }
 
     @PostMapping("/listCompleteOrder")
-    public Response listCompleteOrder(String openId) {
-        return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.COMPLETE.getCode()));
+    public Response listCompleteOrder() throws GatewayException {
+        return Response.ok(
+                expressService.listExpressOrderByStatusAndPublishor(StatusEnum.COMPLETE.getCode()));
+    }
+
+    @PostMapping("/listUnCompleteOrder")
+    public Response listUnCompleteOrder() throws GatewayException {
+        return Response.ok(
+                expressService.listExpressOrderByStatusAndPublishor(StatusEnum.UN_COMPLETE.getCode()));
+    }
+
+    @PostMapping("/listDoingOrder")
+    public Response listDoingOrder() throws GatewayException {
+        return Response.ok(expressService.listDoingOrderByPublishor());
     }
 
     @PostMapping("/test")

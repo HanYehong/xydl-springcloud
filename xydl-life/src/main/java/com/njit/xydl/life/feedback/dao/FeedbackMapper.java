@@ -1,6 +1,6 @@
-package com.njit.xydl.life.express.dao;
+package com.njit.xydl.life.feedback.dao;
 
-import com.njit.xydl.life.express.entity.Feedback;
+import com.njit.xydl.life.common.entity.Feedback;
 
 public interface FeedbackMapper {
     int deleteByPrimaryKey(Byte id);

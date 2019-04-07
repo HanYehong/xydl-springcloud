@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.njit.xydl.life.express.dao.FeedbackMapper">
-  <resultMap id="BaseResultMap" type="com.njit.xydl.life.express.entity.Feedback">
+<mapper namespace="com.njit.xydl.life.feedback.dao.FeedbackMapper">
+  <resultMap id="BaseResultMap" type="com.njit.xydl.life.common.entity.Feedback">
     <id column="id" jdbcType="TINYINT" property="id" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="contact_way" jdbcType="VARCHAR" property="contact_way" />
@@ -23,7 +23,7 @@
     delete from feedback
     where id = #{id,jdbcType=TINYINT}
   </delete>
-  <insert id="insert" parameterType="com.njit.xydl.life.express.entity.Feedback">
+  <insert id="insert" parameterType="com.njit.xydl.life.common.entity.Feedback">
     insert into feedback (id, content, contact_way, 
       commitor, create_time, update_time, 
       is_delete)
@@ -31,7 +31,7 @@
       #{commitor,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP}, 
       #{is_delete,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.njit.xydl.life.express.entity.Feedback">
+  <insert id="insertSelective" parameterType="com.njit.xydl.life.common.entity.Feedback">
     insert into feedback
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.njit.xydl.life.express.entity.Feedback">
+  <update id="updateByPrimaryKeySelective" parameterType="com.njit.xydl.life.common.entity.Feedback">
     update feedback
     <set>
       <if test="content != null">
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=TINYINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.njit.xydl.life.express.entity.Feedback">
+  <update id="updateByPrimaryKey" parameterType="com.njit.xydl.life.common.entity.Feedback">
     update feedback
     set content = #{content,jdbcType=VARCHAR},
       contact_way = #{contact_way,jdbcType=VARCHAR},

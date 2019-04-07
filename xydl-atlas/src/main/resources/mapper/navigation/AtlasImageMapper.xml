@@ -12,6 +12,12 @@
   <sql id="Base_Column_List">
     id, atlas_id, image_url, create_time, update_time, is_delete
   </sql>
+  <select id="selectByAtlasId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from atlas_image
+    where atlas_id = #{atlasId} and is_delete = 0
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

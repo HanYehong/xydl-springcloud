@@ -25,15 +25,19 @@ public enum StatusEnum {
 	/**
 	 * 当该订单被接单者取消但是还没付款时的状态
 	 */
-	WAIT_ACCEPTOR_PAY(3, "待接单者付款"),
+	WAIT_ACCEPTOR_PAY(4, "待接单者付款"),
 	/**
 	 * 该订单被完成（终结状态）
 	 */
-	COMPLETE(4, "已完成"),
+	COMPLETE(5, "已完成"),
 	/**
 	 * 该订单未完成（终结状态，例如，接单者取消订单、发布者取消订单）
 	 */
-	UN_COMPLETE(5, "未完成");
+	UN_COMPLETE(6, "未完成"),
+	/**
+	 * 订单被接单后但还未授权
+	 */
+	WAIT_AUTHORIZATION(7, "待授权");
 
 	private Integer code;
 	private String name;

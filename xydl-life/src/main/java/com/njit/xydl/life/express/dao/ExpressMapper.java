@@ -1,6 +1,7 @@
 package com.njit.xydl.life.express.dao;
 
-import com.njit.xydl.life.express.entity.Express;
+import com.njit.xydl.life.common.entity.Express;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,8 @@ public interface ExpressMapper {
 
     int updateByPrimaryKey(Express record);
 
-    List<Express> selectExpressOrderByStatus(int status);
+    List<Express> selectExpressOrderByStatus(@Param("status") int status);
+
+    List<Express> selectExpressOrderByStatusAndPublishor(@Param("status") int status,
+                                                         @Param("publishor") String publishor);
 }

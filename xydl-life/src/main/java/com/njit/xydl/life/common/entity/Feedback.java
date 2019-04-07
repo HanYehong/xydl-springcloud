@@ -1,4 +1,4 @@
-package com.njit.xydl.life.express.entity;
+package com.njit.xydl.life.common.entity;
 
 import lombok.Data;
 
