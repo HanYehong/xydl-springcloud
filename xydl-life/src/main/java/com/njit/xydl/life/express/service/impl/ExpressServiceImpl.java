@@ -84,6 +84,7 @@ public class ExpressServiceImpl implements ExpressService {
         try {
             express.setAcceptor(UserUtil.getCurrentUserId());
             express.setAccept_time(new Date());
+            express.setStatus(StatusEnum.WAIT_AUTHORIZATION.getCode());
             expressMapper.updateByPrimaryKeySelective(express);
         } catch (Exception e) {
             e.printStackTrace();
@@ -118,16 +119,22 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void sended(String orderNumber) {
-
+        Express express = expressMapper.selectByOrderNumber(orderNumber);
+        express.setStatus(StatusEnum.WAIT_CONFIRM.getCode());
+        expressMapper.updateByPrimaryKeySelective(express);
     }
 
     @Override
     public void received(String orderNumber) {
-
+        Express express = expressMapper.selectByOrderNumber(orderNumber);
+        express.setStatus(StatusEnum.COMPLETE.getCode());
+        expressMapper.updateByPrimaryKeySelective(express);
     }
 
     @Override
     public void authorization(String orderNumber) {
-
+        Express express = expressMapper.selectByOrderNumber(orderNumber);
+        express.setStatus(StatusEnum.WAIT_SEND.getCode());
+        expressMapper.updateByPrimaryKeySelective(express);
     }
 }
