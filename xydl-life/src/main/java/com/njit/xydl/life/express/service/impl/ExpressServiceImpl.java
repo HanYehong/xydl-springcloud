@@ -95,8 +95,20 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void cancelOrder(String orderNumber) {
+    public void cancelOrder(String orderNumber) throws GatewayException {
+        String openId = UserUtil.getCurrentUserId();
+        Express express = expressMapper.selectByOrderNumber(orderNumber);
+        if (express.getPublishor().equals(openId)) {
+            express.setStatus(StatusEnum.WAIT_PUBLISHOR_PAY.getCode());
+            express.setUpdate_time(new Date());
+        }
 
+        if (express.getAcceptor().equals(openId)) {
+            express.setStatus(StatusEnum.WAIT_ACCEPTOR_PAY.getCode());
+            express.setUpdate_time(new Date());
+        }
+
+        expressMapper.updateByPrimaryKeySelective(express);
     }
 
     @Override

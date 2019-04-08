@@ -46,7 +46,7 @@ public interface ExpressService {
      * 取消订单
      * @param orderNumber
      */
-    void cancelOrder(String orderNumber);
+    void cancelOrder(String orderNumber) throws GatewayException;
 
     /**
      * 模拟支付
