@@ -2,7 +2,199 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e75f22b9-4e3a-4e25-ad25-5b82437db444" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/bus/controller/BusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/bus/controller/request/PointerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/bus/service/BusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/bus/service/impl/BusServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/common/cache/CacheKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/common/enums/BusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/common/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/controller/AtlasController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/dao/AtlasImageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/dao/AtlasMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/entity/Atlas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/entity/AtlasImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/service/AtlasService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/navigation/service/impl/AtlasServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mapper/navigation/AtlasImageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mapper/navigation/AtlasMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/util/UserUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/controller/ExpressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/dao/ExpressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/ExpressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/impl/ExpressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/feedback/controller/FeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/feedback/service/FeedbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/resource/service/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/resource/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/robot/controller/RobotController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/robot/service/ChatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/robot/service/RecognizeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/robot/service/impl/RecognizeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/dto/TokenDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/dao/SchoolUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/dao/WechatUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/resources/mapper/SchoolUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-users/src/main/resources/mapper/WechatUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/interceptor/AuthorizeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/interceptor/ErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/src/main/java/com/njit/xydl/getway/GetwayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/src/main/java/com/njit/xydl/getway/SimpleFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getway/src/test/java/com/njit/xydl/getway/GetwayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/src/main/java/com/njit/xydl/reading/ReadingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/src/main/java/com/njit/xydl/reading/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/src/main/java/com/njit/xydl/reading/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading/src/test/java/com/njit/xydl/reading/ReadingApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/XydlAtlasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/atlas/XydlAtlasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/controller/AtlasController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/dao/AtlasImageMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/dao/AtlasMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/Atlas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/AtlasExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/AtlasImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/AtlasImageExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/vo/AtlasVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/vo/CarMarkersVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/service/AtlasImageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/service/AtlasService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/service/impl/AtlasImageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/service/impl/AtlasServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/utils/JSONResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mapper/AtlasImageMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mapper/AtlasMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-atlas/src/test/java/com/njit/xydl/map/XydlMapApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-atlas/src/test/java/com/njit/xydl/atlas/XydlAtlasApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/XydlCarApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/config/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/controller/CarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/dao/CarMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/entity/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/entity/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/CarService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/service/impl/CarServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/JSONResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/java/com/njit/xydl/car/utils/RedisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/resources/mapper/CarMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/main/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-car/src/test/java/com/njit/xydl/car/XydlCarApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/XydlConsumerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/XydlProviderConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/src/main/java/com/njit/xydl/consumer/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer/src/test/java/com/njit/xydl/consumer/XydlConsumerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/XydlConsumer2Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/src/main/java/com/njit/xydl/consumer2/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-consumer2/src/test/java/com/njit/xydl/consumer2/XydlConsumer2ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/XydlLifeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/XydlLifeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/controller/ExpressController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/dao/ExpressMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/dao/FeedbackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/feedback/dao/FeedbackMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Express.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/entity/Express.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/entity/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/SizeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/enums/SizeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/enums/StatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/enums/StatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/ExpressService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/impl/ExpressServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/utils/JSONResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/resources/mapper/ExpressMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/resources/mapper/express/ExpressMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/resources/mapper/FeedbackMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/resources/mapper/feedback/FeedbackMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-life/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/XydlRobotApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/controller/RobotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/service/Check.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/service/TulingRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/robot/service/impl/ChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/BaseImg64.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/util/BaseImg64.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/java/com/njit/xydl/robot/utils/JSONResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-robot/src/test/java/com/njit/xydl/robot/XydlRobotApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/XydlUserApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/src/main/java/com/njit/xydl/user/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-user/src/test/java/com/njit/xydl/user/XydlUserApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/XydlUsersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/XydlUsersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/CheckTokenInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/request/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/dao/UsersScMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/dao/UsersWxMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/dao/WxScMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersSc.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/SchoolUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersScExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersWx.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/WechatUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/UsersWxExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/Vo/UsersWxVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/WxSc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/entity/WxScExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/exception/ValidException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/exception/WebExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/UsersWxService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/UsersWxServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/resources/mapper/UsersScMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/resources/mapper/UsersWxMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-users/src/main/resources/mapper/WxScMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-zuul-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-zuul-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/XydlZuulServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xydl-zuul-service/src/main/java/com/njit/xydl/zuul/XydlZuulServiceApplication.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,70 +243,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/CheckTokenInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/interceptor/WebConfigurer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="33" column="114" selection-start-line="33" selection-start-column="114" selection-end-line="33" selection-end-column="114" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/UsersWxService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/LoginService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/ExpressService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-152">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/impl/ExpressServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="475">
+              <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/dao/ExpressMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/entity/Express.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xydl-life/src/main/resources/mapper/express/ExpressMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -136,18 +328,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/exception/WebExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -187,9 +367,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/service/impl/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/xydl-admin/src/main/resources/mapper/FileInfoMapper.xml" />
-        <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/controller/FileController.java" />
         <option value="$PROJECT_DIR$/xydl-admin/src/main/java/com/njit/xydl/admin/utils/Java_Tools.java" />
         <option value="$PROJECT_DIR$/xydl-admin/pom.xml" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/UserWxController.java" />
@@ -238,6 +415,9 @@
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/HttpUtil.java" />
         <option value="$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/util/Md5Util.java" />
+        <option value="$PROJECT_DIR$/xydl-life/src/main/resources/mapper/express/ExpressMapper.xml" />
+        <option value="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/dao/ExpressMapper.java" />
+        <option value="$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/impl/ExpressServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -326,7 +506,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="life" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="express" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
@@ -336,16 +516,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="life" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="life" type="462c0819:PsiDirectoryNode" />
+              <item name="express" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,6 +527,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="life" type="462c0819:PsiDirectoryNode" />
+              <item name="express" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -379,75 +551,12 @@
             <path>
               <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xydl-springcloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xydl-springcloud" type="462c0819:PsiDirectoryNode" />
-              <item name="xydl-users" type="462c0819:PsiDirectoryNode" />
+              <item name="xydl-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="express" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -464,10 +573,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553597879173" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554734828553" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL&#10;TSQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../common-webconfig" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -477,12 +586,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MyConfiguration\yehong.han\IdeaProjects\xydl-springcloud\xydl-users\src\main\java\com\njit\xydl\users\controller" />
-      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\dao" />
-      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\entity" />
-      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\resources\mapper" />
-      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.njit.xydl.life.utils" />
@@ -491,8 +596,12 @@
       <recent name="com.njit.xydl.robot.utils" />
       <recent name="com.njit.xydl.provider2" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\service" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyConfiguration\yehong.han\IdeaProjects\xydl-springcloud\xydl-users\src\main\java\com\njit\xydl\users\controller" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\dao" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\java\com\njit\xydl\life\entity" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\resources\mapper" />
+      <recent name="H:\lntelliJ IDEA\springcloud-xydl\xydl-life\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -580,6 +689,13 @@
     <configuration name="XydlAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="xydl-admin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.admin.XydlAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XydlAtlasApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xydl-atlas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.njit.xydl.atlas.XydlAtlasApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -738,6 +854,7 @@
       <item itemvalue="Spring Boot.XydlEurekaService1Application" />
       <item itemvalue="Spring Boot.XydlZuulServiceApplication" />
       <item itemvalue="Spring Boot.XydlAtlasApplication" />
+      <item itemvalue="Spring Boot.XydlAtlasApplication (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -779,12 +896,12 @@
       <workItem from="1553424063158" duration="2049000" />
       <workItem from="1553426409900" duration="8358000" />
       <workItem from="1553528013317" duration="2885000" />
-      <workItem from="1554730724359" duration="276000" />
+      <workItem from="1554730724359" duration="3197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167079000" />
+    <option name="totallyTimeSpent" value="170000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -832,23 +949,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/impl/ExpressOrderServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/impl/ExpressOrderStatusServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/resources/mapper/FeedbackMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/dao/FeedbackMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/ExpressOrderService.java" />
     <entry file="file://$PROJECT_DIR$/xydl-atlas/src/main/java/com/njit/xydl/map/entity/Atlas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -933,16 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/impl/ExpressServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1130,7 +1220,7 @@
     <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/LoginService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1142,13 +1232,7 @@
         <state relative-caret-position="228">
           <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1177,13 +1261,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/service/impl/ExpressServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        <state relative-caret-position="437">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-users/src/main/java/com/njit/xydl/users/service/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/ExpressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/resources/mapper/express/ExpressMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/dao/ExpressMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/common/entity/Express.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xydl-life/src/main/java/com/njit/xydl/life/express/service/impl/ExpressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
         </state>
       </provider>
     </entry>

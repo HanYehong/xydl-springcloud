@@ -3,9 +3,9 @@ server:
   port: 6001
 
 mybatis:
-  typeAliasesPackage: com.njit.xydl.life.entity
-  mapperLocations: classpath:mapper/*.xml
-  mapperScanPackage: com.njit.xydl.life.dao
+  typeAliasesPackage: com.njit.xydl.life.*.entity
+  mapperLocations: classpath:mapper/*/*.xml
+  mapperScanPackage: com.njit.xydl.life.*.dao
   configLocation: classpath:mybatis-config.xml
 
 spring:

@@ -1,10 +1,10 @@
 package com.njit.xydl.users.service;
 
-import com.njit.xydl.users.controller.request.LoginRequest;
-import com.njit.xydl.users.service.bo.SessionBO;
+import com.njit.xydl.users.controller.dto.LoginDTO;
+import com.njit.xydl.users.controller.dto.TokenDTO;
+import com.yehong.han.config.exception.GatewayException;
 
 import java.io.IOException;
-import java.util.Map;
 
 /**
  * @author yehong.han
@@ -18,6 +18,8 @@ public interface LoginService {
 	 * @return
 	 * @throws IOException
 	 */
-	String login(LoginRequest param) throws IOException;
+	String login(TokenDTO param) throws IOException;
+
+	boolean authorize(LoginDTO param) throws GatewayException;
 
 }
