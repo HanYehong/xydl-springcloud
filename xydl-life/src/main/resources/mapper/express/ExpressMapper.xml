@@ -3,23 +3,23 @@
 <mapper namespace="com.njit.xydl.life.express.dao.ExpressMapper">
   <resultMap id="BaseResultMap" type="com.njit.xydl.life.common.entity.Express">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="order_number" jdbcType="VARCHAR" property="order_number" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
     <result column="publishor" jdbcType="VARCHAR" property="publishor" />
     <result column="size" jdbcType="INTEGER" property="size" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="pickup_code" jdbcType="VARCHAR" property="pickup_code" />
+    <result column="pickup_code" jdbcType="VARCHAR" property="pickupCode" />
     <result column="destination" jdbcType="VARCHAR" property="destination" />
-    <result column="special_attention" jdbcType="VARCHAR" property="special_attention" />
-    <result column="order_deadline_date" jdbcType="TIMESTAMP" property="order_deadline_date" />
+    <result column="special_attention" jdbcType="VARCHAR" property="specialAttention" />
+    <result column="order_deadline_date" jdbcType="TIMESTAMP" property="orderDeadlineDate" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="acceptor" jdbcType="VARCHAR" property="acceptor" />
     <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="accept_time" jdbcType="TIMESTAMP" property="accept_time" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
-    <result column="is_delete" jdbcType="INTEGER" property="is_delete" />
+    <result column="accept_time" jdbcType="TIMESTAMP" property="acceptTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
     id, order_number, publishor, size, description, name, phone, pickup_code, destination, 
