@@ -3,23 +3,23 @@
 <mapper namespace="com.njit.xydl.life.express.dao.ExpressMapper">
   <resultMap id="BaseResultMap" type="com.njit.xydl.life.common.entity.Express">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="order_number" jdbcType="VARCHAR" property="order_number" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
     <result column="publishor" jdbcType="VARCHAR" property="publishor" />
     <result column="size" jdbcType="INTEGER" property="size" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="pickup_code" jdbcType="VARCHAR" property="pickup_code" />
+    <result column="pickup_code" jdbcType="VARCHAR" property="pickupCode" />
     <result column="destination" jdbcType="VARCHAR" property="destination" />
-    <result column="special_attention" jdbcType="VARCHAR" property="special_attention" />
-    <result column="order_deadline_date" jdbcType="TIMESTAMP" property="order_deadline_date" />
+    <result column="special_attention" jdbcType="VARCHAR" property="specialAttention" />
+    <result column="order_deadline_date" jdbcType="TIMESTAMP" property="orderDeadlineDate" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="acceptor" jdbcType="VARCHAR" property="acceptor" />
     <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="accept_time" jdbcType="TIMESTAMP" property="accept_time" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
-    <result column="is_delete" jdbcType="INTEGER" property="is_delete" />
+    <result column="accept_time" jdbcType="TIMESTAMP" property="acceptTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
     id, order_number, publishor, size, description, name, phone, pickup_code, destination, 
@@ -62,13 +62,13 @@
       price, acceptor, status, 
       accept_time, create_time, update_time, 
       is_delete)
-    values (#{id,jdbcType=BIGINT}, #{order_number,jdbcType=VARCHAR}, #{publishor,jdbcType=VARCHAR}, 
-      #{size,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{pickup_code,jdbcType=VARCHAR}, #{destination,jdbcType=VARCHAR}, 
-      #{special_attention,jdbcType=VARCHAR}, #{order_deadline_date,jdbcType=TIMESTAMP}, 
-      #{price,jdbcType=DOUBLE}, #{acceptor,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{accept_time,jdbcType=TIMESTAMP}, #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP}, 
-      #{is_delete,jdbcType=INTEGER})
+    values (#{id,jdbcType=BIGINT}, #{orderNumber,jdbcType=VARCHAR}, #{publishor,jdbcType=VARCHAR},
+      #{size,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{phone,jdbcType=VARCHAR}, #{pickupCode,jdbcType=VARCHAR}, #{destination,jdbcType=VARCHAR},
+      #{specialAttention,jdbcType=VARCHAR}, #{orderDeadlineDate,jdbcType=TIMESTAMP},
+      #{price,jdbcType=DOUBLE}, #{acceptor,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+      #{acceptTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.njit.xydl.life.common.entity.Express">
     insert into express_order
@@ -76,7 +76,7 @@
       <if test="id != null">
         id,
       </if>
-      <if test="order_number != null">
+      <if test="orderNumber != null">
         order_number,
       </if>
       <if test="publishor != null">
@@ -94,16 +94,16 @@
       <if test="phone != null">
         phone,
       </if>
-      <if test="pickup_code != null">
+      <if test="pickupCode != null">
         pickup_code,
       </if>
       <if test="destination != null">
         destination,
       </if>
-      <if test="special_attention != null">
+      <if test="specialAttention != null">
         special_attention,
       </if>
-      <if test="order_deadline_date != null">
+      <if test="orderDeadlineDate != null">
         order_deadline_date,
       </if>
       <if test="price != null">
@@ -115,16 +115,16 @@
       <if test="status != null">
         status,
       </if>
-      <if test="accept_time != null">
+      <if test="acceptTime != null">
         accept_time,
       </if>
-      <if test="create_time != null">
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="update_time != null">
+      <if test="updateTime != null">
         update_time,
       </if>
-      <if test="is_delete != null">
+      <if test="isDelete != null">
         is_delete,
       </if>
     </trim>
@@ -132,8 +132,8 @@
       <if test="id != null">
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="order_number != null">
-        #{order_number,jdbcType=VARCHAR},
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
       </if>
       <if test="publishor != null">
         #{publishor,jdbcType=VARCHAR},
@@ -150,17 +150,17 @@
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="pickup_code != null">
-        #{pickup_code,jdbcType=VARCHAR},
+      <if test="pickupCode != null">
+        #{pickupCode,jdbcType=VARCHAR},
       </if>
       <if test="destination != null">
         #{destination,jdbcType=VARCHAR},
       </if>
-      <if test="special_attention != null">
-        #{special_attention,jdbcType=VARCHAR},
+      <if test="specialAttention != null">
+        #{specialAttention,jdbcType=VARCHAR},
       </if>
-      <if test="order_deadline_date != null">
-        #{order_deadline_date,jdbcType=TIMESTAMP},
+      <if test="orderDeadlineDate != null">
+        #{orderDeadlineDate,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
         #{price,jdbcType=DOUBLE},
@@ -171,25 +171,25 @@
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="accept_time != null">
-        #{accept_time,jdbcType=TIMESTAMP},
+      <if test="acceptTime != null">
+        #{acceptTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="create_time != null">
-        #{create_time,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="update_time != null">
-        #{update_time,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="is_delete != null">
-        #{is_delete,jdbcType=INTEGER},
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.njit.xydl.life.common.entity.Express">
     update express_order
     <set>
-      <if test="order_number != null">
-        order_number = #{order_number,jdbcType=VARCHAR},
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
       </if>
       <if test="publishor != null">
         publishor = #{publishor,jdbcType=VARCHAR},
@@ -206,17 +206,17 @@
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="pickup_code != null">
-        pickup_code = #{pickup_code,jdbcType=VARCHAR},
+      <if test="pickupCode != null">
+        pickup_code = #{pickupCode,jdbcType=VARCHAR},
       </if>
       <if test="destination != null">
         destination = #{destination,jdbcType=VARCHAR},
       </if>
-      <if test="special_attention != null">
-        special_attention = #{special_attention,jdbcType=VARCHAR},
+      <if test="specialAttention != null">
+        special_attention = #{specialAttention,jdbcType=VARCHAR},
       </if>
-      <if test="order_deadline_date != null">
-        order_deadline_date = #{order_deadline_date,jdbcType=TIMESTAMP},
+      <if test="orderDeadlineDate != null">
+        order_deadline_date = #{orderDeadlineDate,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
         price = #{price,jdbcType=DOUBLE},
@@ -227,40 +227,39 @@
       <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="accept_time != null">
-        accept_time = #{accept_time,jdbcType=TIMESTAMP},
+      <if test="acceptTime != null">
+        accept_time = #{acceptTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="create_time != null">
-        create_time = #{create_time,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="update_time != null">
-        update_time = #{update_time,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="is_delete != null">
-        is_delete = #{is_delete,jdbcType=INTEGER},
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.njit.xydl.life.common.entity.Express">
     update express_order
-    set order_number = #{order_number,jdbcType=VARCHAR},
       publishor = #{publishor,jdbcType=VARCHAR},
       size = #{size,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      pickup_code = #{pickup_code,jdbcType=VARCHAR},
+      pickup_code = #{pickupCode,jdbcType=VARCHAR},
       destination = #{destination,jdbcType=VARCHAR},
-      special_attention = #{special_attention,jdbcType=VARCHAR},
-      order_deadline_date = #{order_deadline_date,jdbcType=TIMESTAMP},
+      special_attention = #{specialAttention,jdbcType=VARCHAR},
+      order_deadline_date = #{orderDeadlineDate,jdbcType=TIMESTAMP},
       price = #{price,jdbcType=DOUBLE},
       acceptor = #{acceptor,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
-      accept_time = #{accept_time,jdbcType=TIMESTAMP},
-      create_time = #{create_time,jdbcType=TIMESTAMP},
-      update_time = #{update_time,jdbcType=TIMESTAMP},
-      is_delete = #{is_delete,jdbcType=INTEGER}
+      accept_time = #{acceptTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

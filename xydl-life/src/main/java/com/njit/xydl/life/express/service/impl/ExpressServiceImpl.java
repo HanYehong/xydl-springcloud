@@ -1,13 +1,12 @@
 package com.njit.xydl.life.express.service.impl;
 
+import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
-import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.express.service.ExpressService;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
-import lombok.Synchronized;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,14 +49,12 @@ public class ExpressServiceImpl implements ExpressService {
     public List<Express> listDoingOrderByPublishor() throws GatewayException {
         List<Express> list1 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_ACCEPT.getCode());
         List<Express> list2 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_ACCEPTOR_PAY.getCode());
-        List<Express> list3 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_PUBLISHOR_PAY.getCode());
         List<Express> list4 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_CONFIRM.getCode());
         List<Express> list5 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_SEND.getCode());
         list1.addAll(list2);
-        list1.addAll(list3);
         list1.addAll(list4);
         list1.addAll(list5);
-        list1.sort(Comparator.comparing(Express::getCreate_time));
+        list1.sort(Comparator.comparing(Express::getCreateTime));
         return list1;
     }
 
@@ -83,7 +80,7 @@ public class ExpressServiceImpl implements ExpressService {
         }
         try {
             express.setAcceptor(UserUtil.getCurrentUserId());
-            express.setAccept_time(new Date());
+            express.setAcceptTime(new Date());
             express.setStatus(StatusEnum.WAIT_AUTHORIZATION.getCode());
             expressMapper.updateByPrimaryKeySelective(express);
         } catch (Exception e) {
@@ -100,13 +97,12 @@ public class ExpressServiceImpl implements ExpressService {
         String openId = UserUtil.getCurrentUserId();
         Express express = expressMapper.selectByOrderNumber(orderNumber);
         if (express.getPublishor().equals(openId)) {
-            express.setStatus(StatusEnum.WAIT_PUBLISHOR_PAY.getCode());
-            express.setUpdate_time(new Date());
+            // 进行汇款
         }
 
         if (express.getAcceptor().equals(openId)) {
             express.setStatus(StatusEnum.WAIT_ACCEPTOR_PAY.getCode());
-            express.setUpdate_time(new Date());
+            express.setUpdateTime(new Date());
         }
 
         expressMapper.updateByPrimaryKeySelective(express);

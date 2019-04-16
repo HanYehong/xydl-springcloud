@@ -4,11 +4,11 @@
   <resultMap id="BaseResultMap" type="com.njit.xydl.life.common.entity.Feedback">
     <id column="id" jdbcType="TINYINT" property="id" />
     <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="contact_way" jdbcType="VARCHAR" property="contact_way" />
+    <result column="contact_way" jdbcType="VARCHAR" property="contactWay" />
     <result column="commitor" jdbcType="VARCHAR" property="commitor" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
-    <result column="is_delete" jdbcType="INTEGER" property="is_delete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
     id, content, contact_way, commitor, create_time, update_time, is_delete
