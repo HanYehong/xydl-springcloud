@@ -262,4 +262,64 @@
       is_delete = #{isDelete,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="selectSelective" parameterType="com.njit.xydl.life.common.entity.Express">
+    select
+    <include refid="Base_Column_List"/>
+    from express_order
+    where 1=1
+    <if test="id != null">
+      and id = #{id}
+    </if>
+    <if test="orderNumber != null">
+      and order_number = #{orderNumber}
+    </if>
+    <if test="publishor != null">
+      and publishor = #{publishor}
+    </if>
+    <if test="size != null">
+      and `size` = #{size}
+    </if>
+    <if test="description != null">
+      and description = #{description}
+    </if>
+    <if test="name != null">
+      and `name` = #{name}
+    </if>
+    <if test="phone != null">
+      and phone = #{phone}
+    </if>
+    <if test="pickupCode != null">
+      and pickup_code = #{pickupCode}
+    </if>
+    <if test="destination != null">
+      and destination = #{destination}
+    </if>
+    <if test="specialAttention != null">
+      and special_attention = #{specialAttention}
+    </if>
+    <if test="orderDeadlineDate != null">
+      and order_deadline_date = #{orderDeadlineDate}
+    </if>
+    <if test="price != null">
+      and price = #{price}
+    </if>
+    <if test="acceptor != null">
+      and acceptor = #{acceptor}
+    </if>
+    <if test="status != null">
+      and status = #{status}
+    </if>
+    <if test="acceptTime != null">
+      and accept_time = #{acceptTime}
+    </if>
+    <if test="createTime != null">
+      and create_time = {createTime}
+    </if>
+    <if test="updateTime != null">
+      and update_time = #{updateTime}
+    </if>
+    <if test="isDelete != null">
+      and is_delete = #{isDelete}
+    </if>
+  </insert>
 </mapper>

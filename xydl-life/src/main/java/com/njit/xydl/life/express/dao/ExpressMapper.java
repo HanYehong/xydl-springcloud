@@ -14,6 +14,8 @@ public interface ExpressMapper {
 
     Express selectByPrimaryKey(Long id);
 
+    List<Express> selectSelective(Express record);
+
     int updateByPrimaryKeySelective(Express record);
 
     int updateByPrimaryKey(Express record);

@@ -5,16 +5,17 @@ import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
 import com.njit.xydl.life.express.service.ExpressService;
+import com.njit.xydl.life.express.service.bo.OrderListBO;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 /**
@@ -36,26 +37,28 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public List<Express> listExpressOrderByStatusAndPublishor(Integer status)
-            throws GatewayException {
-        if (status == null){
-            throw new GatewayException("请指明查询的订单状态");
-        }
+    public List<Express> listExpressOrderByPublishor() throws GatewayException {
         String openId = UserUtil.getCurrentUserId();
         return expressMapper.selectExpressOrderByStatusAndPublishor(status, openId);
     }
 
     @Override
-    public List<Express> listDoingOrderByPublishor() throws GatewayException {
-        List<Express> list1 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_ACCEPT.getCode());
-        List<Express> list2 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_ACCEPTOR_PAY.getCode());
-        List<Express> list4 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_CONFIRM.getCode());
-        List<Express> list5 = listExpressOrderByStatusAndPublishor(StatusEnum.WAIT_SEND.getCode());
-        list1.addAll(list2);
-        list1.addAll(list4);
-        list1.addAll(list5);
-        list1.sort(Comparator.comparing(Express::getCreateTime));
-        return list1;
+    public OrderListBO listDoingOrderByPublishor() throws GatewayException {
+        Express param = new Express();
+        param.setPublishor(UserUtil.getCurrentUserId());
+        List<Express> allList = expressMapper.selectSelective(param);
+        List<Express> processing = allList.stream().filter(x ->
+                x.getStatus().equals(StatusEnum.WAIT_ACCEPT.getCode()) ||
+                x.getStatus().equals(StatusEnum.WAIT_CONFIRM.getCode()) ||
+                x.getStatus().equals(StatusEnum.WAIT_SEND.getCode()) ||
+                x.getStatus().equals(StatusEnum.WAIT_AUTHORIZATION.getCode())).collect(Collectors.toList());
+        List<Express> complete = allList.stream().filter(x -> x.getStatus().equals(StatusEnum.COMPLETE.getCode())).collect(Collectors.toList());
+        List<Express> uncomplete = allList.stream().filter(x -> x.getStatus().equals(StatusEnum.UN_COMPLETE.getCode())).collect(Collectors.toList());
+        OrderListBO result = new OrderListBO();
+        result.setProcessing(processing);
+        result.setComplete(complete);
+        result.setUncomplete(uncomplete);
+        return result;
     }
 
     @Override
