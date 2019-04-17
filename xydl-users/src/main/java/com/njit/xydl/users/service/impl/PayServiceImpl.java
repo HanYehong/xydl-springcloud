@@ -5,6 +5,7 @@ import com.njit.xydl.users.entity.WechatUser;
 import com.njit.xydl.users.service.PayService;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,35 +20,49 @@ public class PayServiceImpl implements PayService {
 	@Autowired
 	private WechatUserMapper wechatUserMapper;
 
+	private static final int SUCCESS = 1;
+
+	private static final int FAIL = 0;
+
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void payPersonToPerson(String accountA, String accountB, Double money) throws GatewayException {
-		payProcess(accountA, money);
+	public int payPersonToPerson(String accountA, String accountB, Double money) throws GatewayException {
+		int result = payProcess(accountA, money);
+		if (result == FAIL) {
+			return Status.FAIL.getCode();
+		}
 		acceptProcess(accountB, money);
+		return Status.OK.getCode();
 	}
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void payPersonToTemporary(String accountA, Double money) throws GatewayException {
-		payProcess(accountA, money);
+	public int payPersonToTemporary(String accountA, Double money) throws GatewayException {
+		int result = payProcess(accountA, money);
+		if (result == FAIL) {
+			return Status.FAIL.getCode();
+		}
 		temporaryProcess(money, 1);
+		return Status.OK.getCode();
 	}
 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public void payTemporaryToPerson(String accountB, Double money) throws GatewayException {
+	public int payTemporaryToPerson(String accountB, Double money) throws GatewayException {
 		temporaryProcess(money, 0);
 		acceptProcess(accountB, money);
+		return Status.OK.getCode();
 	}
 
-	private void payProcess(String account, double money) throws GatewayException {
+	private int payProcess(String account, double money) throws GatewayException {
 		WechatUser userA = getUserInfo(account);
 		double tempMoney = userA.getMoneyPackage() - money;
 		if (tempMoney < 0) {
-			throw new GatewayException("账户余额不足");
+			return FAIL;
 		}
 		userA.setMoneyPackage(tempMoney);
 		updateUser(userA);
+		return SUCCESS;
 	}
 
 	private void acceptProcess(String account, double money) throws GatewayException {

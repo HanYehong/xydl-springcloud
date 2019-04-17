@@ -92,10 +92,4 @@ public interface ExpressService {
      */
     void rePublish(String orderNumber) throws GatewayException;
 
-    /**
-     * 模拟支付
-     * @param orderNumber
-     */
-    void pay(String orderNumber);
-
 }

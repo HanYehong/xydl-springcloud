@@ -2,6 +2,8 @@ package com.njit.xydl.life.express.service.impl;
 
 import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.common.enums.StatusEnum;
+import com.njit.xydl.life.common.feignservice.PayService;
+import com.njit.xydl.life.common.feignservice.dto.PayDTO;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
 import com.njit.xydl.life.express.service.ExpressService;
@@ -28,6 +30,9 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Autowired
     private ExpressMapper expressMapper;
+
+    @Autowired
+    private PayService payService;
 
     private static final int TIMOUT = 10 * 1000;
 
@@ -137,12 +142,25 @@ public class ExpressServiceImpl implements ExpressService {
         Express express = getExpressOrder(orderNumber);
         if (express.getStatus().equals(StatusEnum.WAIT_AUTHORIZATION.getCode()) || express.getStatus().equals(StatusEnum.WAIT_ACCEPT.getCode())) {
             // 金额回流至发布者账户
+            PayDTO param = new PayDTO();
+            param.setTargetAccount(express.getPublishor());
+            param.setMoney(express.getPrice());
+            payService.payTemporaryToPerson(param);
         } else if (express.getStatus().equals(StatusEnum.WAIT_SEND.getCode())){
             if (openId.equals(express.getPublishor())) {
                 // 从中间账户汇款至接单者
+                PayDTO param = new PayDTO();
+                param.setTargetAccount(express.getAcceptor());
+                param.setMoney(express.getPrice());
+                payService.payTemporaryToPerson(param);
             }
             if (openId.equals(express.getAcceptor())) {
                 // 进行打款操作  接单者账户--->发布者账户
+                PayDTO param = new PayDTO();
+                param.setAccount(express.getAcceptor());
+                param.setTargetAccount(express.getPublishor());
+                param.setMoney(express.getPrice());
+                payService.payTemporaryToPerson(param);
             }
         } else {
             throw new GatewayException("此状态下不允许被取消");
@@ -155,6 +173,10 @@ public class ExpressServiceImpl implements ExpressService {
     @Override
     public void publishExpressOrder(Express express) throws GatewayException {
         // 发布者打款至中间账户
+        PayDTO param = new PayDTO();
+        param.setAccount(UserUtil.getCurrentUserId());
+        param.setMoney(express.getPrice());
+        payService.payPersonToTemporary(param);
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
         express.setStatus(StatusEnum.WAIT_ACCEPT.getCode());
@@ -171,11 +193,6 @@ public class ExpressServiceImpl implements ExpressService {
         if (result < 1) {
             throw new GatewayException("系统不稳定，请稍后再试~");
         }
-    }
-
-    @Override
-    public void pay(String orderNumber) {
-
     }
 
     private int publishAgain(Express express) {
