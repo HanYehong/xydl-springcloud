@@ -10,6 +10,8 @@ import com.njit.xydl.life.express.service.ExpressService;
 import com.njit.xydl.life.express.service.bo.OrderListBO;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.response.Response;
+import com.yehong.han.config.response.Status;
 import jdk.net.SocketFlow;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,7 +162,11 @@ public class ExpressServiceImpl implements ExpressService {
                 param.setAccount(express.getAcceptor());
                 param.setTargetAccount(express.getPublishor());
                 param.setMoney(express.getPrice());
-                payService.payTemporaryToPerson(param);
+                Response response = payService.payTemporaryToPerson(param);
+                Object object = checkResponse(response);
+                if (object.equals(0)) {
+                    throw new GatewayException("账户余额不足，支付失败");
+                }
             }
         } else {
             throw new GatewayException("此状态下不允许被取消");
@@ -176,7 +182,11 @@ public class ExpressServiceImpl implements ExpressService {
         PayDTO param = new PayDTO();
         param.setAccount(UserUtil.getCurrentUserId());
         param.setMoney(express.getPrice());
-        payService.payPersonToTemporary(param);
+        Response response = payService.payPersonToTemporary(param);
+        Object object = checkResponse(response);
+        if (object.equals(0)) {
+            throw new GatewayException("账户余额不足，支付失败");
+        }
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
         express.setStatus(StatusEnum.WAIT_ACCEPT.getCode());
@@ -218,5 +228,12 @@ public class ExpressServiceImpl implements ExpressService {
         String newNumber = "DL" + new SimpleDateFormat("yyyyMMddHHmm").format(new Date()) + UUID.randomUUID().hashCode();
         System.out.println(newNumber);
         return newNumber;
+    }
+
+    private Object checkResponse(Response response) throws GatewayException {
+        if (response.getCode() == Status.FAIL.getCode()) {
+            throw new GatewayException("服务器繁忙，请稍后再试");
+        }
+        return response.getData();
     }
 }

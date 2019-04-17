@@ -29,10 +29,10 @@ public class PayServiceImpl implements PayService {
 	public int payPersonToPerson(String accountA, String accountB, Double money) throws GatewayException {
 		int result = payProcess(accountA, money);
 		if (result == FAIL) {
-			return Status.FAIL.getCode();
+			return FAIL;
 		}
 		acceptProcess(accountB, money);
-		return Status.OK.getCode();
+		return SUCCESS;
 	}
 
 	@Transactional(rollbackFor = Exception.class)
@@ -40,10 +40,10 @@ public class PayServiceImpl implements PayService {
 	public int payPersonToTemporary(String accountA, Double money) throws GatewayException {
 		int result = payProcess(accountA, money);
 		if (result == FAIL) {
-			return Status.FAIL.getCode();
+			return FAIL;
 		}
 		temporaryProcess(money, 1);
-		return Status.OK.getCode();
+		return SUCCESS;
 	}
 
 	@Transactional(rollbackFor = Exception.class)
@@ -51,7 +51,7 @@ public class PayServiceImpl implements PayService {
 	public int payTemporaryToPerson(String accountB, Double money) throws GatewayException {
 		temporaryProcess(money, 0);
 		acceptProcess(accountB, money);
-		return Status.OK.getCode();
+		return SUCCESS;
 	}
 
 	private int payProcess(String account, double money) throws GatewayException {

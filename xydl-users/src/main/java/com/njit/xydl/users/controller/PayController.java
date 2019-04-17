@@ -24,29 +24,17 @@ public class PayController {
 
 	@PostMapping("/personToPerson")
 	public Response payPersonToPerson(@RequestBody PayDTO param) throws GatewayException {
-		int result = payService.payPersonToPerson(param.getAccount(), param.getTargetAccount(), param.getMoney());
-		if (result == Status.OK.getCode()) {
-			return Response.ok();
-		}
-		return Response.fail();
+		return Response.ok(payService.payPersonToPerson(param.getAccount(), param.getTargetAccount(), param.getMoney()));
 	}
 
 	@PostMapping("/personToTemporary")
 	public Response payPersonToTemporary(@RequestBody PayDTO param) throws GatewayException {
-		int result = payService.payPersonToTemporary(param.getAccount(), param.getMoney());
-		if (result == Status.OK.getCode()) {
-			return Response.ok();
-		}
-		return Response.fail();
+		return Response.ok(payService.payPersonToTemporary(param.getAccount(), param.getMoney()));
 	}
 
 	@PostMapping("/temporaryToPerson")
 	public Response payTemporaryToPerson(@RequestBody PayDTO param) throws GatewayException {
-		int result = payService.payTemporaryToPerson(param.getTargetAccount(), param.getMoney());
-		if (result == Status.OK.getCode()) {
-			return Response.ok();
-		}
-		return Response.fail();
+		return Response.ok(payService.payTemporaryToPerson(param.getTargetAccount(), param.getMoney()));
 	}
 
 }
