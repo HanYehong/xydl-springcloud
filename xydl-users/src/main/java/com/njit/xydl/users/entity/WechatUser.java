@@ -35,6 +35,16 @@ public class WechatUser implements Serializable {
 
     private Integer isDelete;
 
+    private Double moneyPackage;
+
+    public Double getMoneyPackage() {
+        return moneyPackage;
+    }
+
+    public void setMoneyPackage(Double moneyPackage) {
+        this.moneyPackage = moneyPackage;
+    }
+
     public Long getId() {
         return id;
     }
