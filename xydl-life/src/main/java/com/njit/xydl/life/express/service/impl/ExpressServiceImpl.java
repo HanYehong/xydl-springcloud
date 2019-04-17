@@ -1,5 +1,6 @@
 package com.njit.xydl.life.express.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.feignservice.PayService;
@@ -7,19 +8,27 @@ import com.njit.xydl.life.common.feignservice.dto.PayDTO;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
 import com.njit.xydl.life.express.service.ExpressService;
+import com.njit.xydl.life.express.service.SmsSendService;
 import com.njit.xydl.life.express.service.bo.OrderListBO;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
+import com.zhenzi.sms.ZhenziSmsClient;
 import jdk.net.SocketFlow;
+import org.apache.commons.httpclient.Header;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -32,6 +41,9 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Autowired
     private ExpressMapper expressMapper;
+
+    @Autowired
+    private SmsSendService smsSendService;
 
     @Autowired
     private PayService payService;
@@ -112,7 +124,7 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void refuseCurrentAccept(String orderNumber) throws GatewayException {
+    public void refuseCurrentAccept(String orderNumber) throws Exception {
         Express express = getExpressOrder(orderNumber);
         if (!express.getStatus().equals(StatusEnum.WAIT_AUTHORIZATION.getCode())) {
             throw new GatewayException("非待授权订单不允许被拒绝接单");
@@ -121,7 +133,7 @@ public class ExpressServiceImpl implements ExpressService {
         if (result < 1) {
             throw new GatewayException("系统不稳定，请稍后再试~");
         }
-        // 发送短信给接单者
+        smsSendService.sendForRefuse("15189809881");
     }
 
     @Override
@@ -236,4 +248,5 @@ public class ExpressServiceImpl implements ExpressService {
         }
         return response.getData();
     }
+
 }

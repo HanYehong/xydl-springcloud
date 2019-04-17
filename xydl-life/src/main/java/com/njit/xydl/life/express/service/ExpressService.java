@@ -60,7 +60,7 @@ public interface ExpressService {
      * <p>拒绝其接单，重置订单状态为待接单，重置接单人</p>
      * @param orderNumber
      */
-    void refuseCurrentAccept(String orderNumber) throws GatewayException;
+    void refuseCurrentAccept(String orderNumber) throws Exception;
 
     /**
      * <p>已送达，接单者确认送达，设置订单状态为待确认，并发短信通知发布者</p>
