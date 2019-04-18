@@ -1,10 +1,11 @@
 package com.njit.xydl.life.express.service.impl;
 
-import com.alibaba.fastjson.JSONObject;
 import com.njit.xydl.life.common.entity.Express;
+import com.njit.xydl.life.common.entity.WechatUser;
 import com.njit.xydl.life.common.enums.StatusEnum;
-import com.njit.xydl.life.common.feignservice.PayService;
-import com.njit.xydl.life.common.feignservice.dto.PayDTO;
+import com.njit.xydl.life.common.feign.PayService;
+import com.njit.xydl.life.common.feign.UserService;
+import com.njit.xydl.life.common.feign.dto.PayDTO;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
 import com.njit.xydl.life.express.service.ExpressService;
@@ -14,21 +15,13 @@ import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
-import com.zhenzi.sms.ZhenziSmsClient;
-import jdk.net.SocketFlow;
-import org.apache.commons.httpclient.Header;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.NameValuePair;
-import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -47,6 +40,9 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Autowired
     private PayService payService;
+
+    @Autowired
+    private UserService userService;
 
     private static final int TIMOUT = 10 * 1000;
 
@@ -89,11 +85,7 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void catchOrder(String orderNumber) throws GatewayException {
-        //加锁
-        long time = System.currentTimeMillis() + UUID.randomUUID().hashCode() + TIMOUT;
-        if (!RedisHelper.getRedisUtil().lock(LOCK_KEY_CATCH, String.valueOf(time))) {
-            throw new GatewayException("该订单已经被接单啦，试试其它的吧~");
-        }
+        checkRealIdentity();
         Express express = expressMapper.selectByOrderNumber(orderNumber);
         if (StringUtils.isBlank(express.getAcceptor())) {
             throw new GatewayException("该订单已经被接单啦，试试其它的吧~");
@@ -101,13 +93,23 @@ public class ExpressServiceImpl implements ExpressService {
         if (express.getPublishor().equals(UserUtil.getCurrentUserId())) {
             throw new GatewayException("不能接自己的单子哦~");
         }
+        if (!express.getStatus().equals(StatusEnum.WAIT_ACCEPT.getCode())) {
+            throw new GatewayException("此订单状态不允许被接单");
+        }
+        //加锁
+        long time = System.currentTimeMillis() + UUID.randomUUID().hashCode() + TIMOUT;
         try {
+            if (!RedisHelper.getRedisUtil().lock(LOCK_KEY_CATCH, String.valueOf(time))) {
+                throw new GatewayException("该订单已经被接单啦，试试其它的吧~");
+            }
             express.setAcceptor(UserUtil.getCurrentUserId());
             express.setAcceptTime(new Date());
             express.setStatus(StatusEnum.WAIT_AUTHORIZATION.getCode());
             expressMapper.updateByPrimaryKeySelective(express);
+            smsSendService.sendForAccept("15189809881", express.getOrderNumber());
         } catch (Exception e) {
             e.printStackTrace();
+            throw new GatewayException(e.getMessage());
         } finally {
             // 解锁
             RedisHelper.getRedisUtil().unlock(LOCK_KEY_CATCH, String.valueOf(time));
@@ -174,10 +176,11 @@ public class ExpressServiceImpl implements ExpressService {
                 param.setAccount(express.getAcceptor());
                 param.setTargetAccount(express.getPublishor());
                 param.setMoney(express.getPrice());
-                Response response = payService.payTemporaryToPerson(param);
-                Object object = checkResponse(response);
-                if (object.equals(0)) {
-                    throw new GatewayException("账户余额不足，支付失败");
+                int result = payService.payTemporaryToPerson(param);
+                if (result == 0) {
+                    throw new GatewayException("服务繁忙，请稍后再试");
+                }else if (result == 2) {
+                    throw new GatewayException("余额不足，请充值");
                 }
             }
         } else {
@@ -190,14 +193,16 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void publishExpressOrder(Express express) throws GatewayException {
+        checkRealIdentity();
         // 发布者打款至中间账户
         PayDTO param = new PayDTO();
         param.setAccount(UserUtil.getCurrentUserId());
         param.setMoney(express.getPrice());
-        Response response = payService.payPersonToTemporary(param);
-        Object object = checkResponse(response);
-        if (object.equals(0)) {
-            throw new GatewayException("账户余额不足，支付失败");
+        int result = payService.payPersonToTemporary(param);
+        if (result == 0) {
+            throw new GatewayException("服务繁忙，请稍后再试");
+        }else if (result == 2) {
+            throw new GatewayException("余额不足，请充值");
         }
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
@@ -247,6 +252,13 @@ public class ExpressServiceImpl implements ExpressService {
             throw new GatewayException("服务器繁忙，请稍后再试");
         }
         return response.getData();
+    }
+
+    private void checkRealIdentity() throws GatewayException {
+        boolean check = userService.checkRealIdentity(UserUtil.getCurrentUserId());
+        if (!check) {
+            throw new GatewayException("还没有进行实名认证不能接单哦~ 实名渠道：生活 -> 我的 -> 我的实名认证");
+        }
     }
 
 }

@@ -2,10 +2,18 @@ server:
   port: 7777
 
 #注册到eureka中心
+#eureka:
+#  client:
+#    service-url:
+#     defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+#  instance:
+#    instance-id: zuul-7777.com
+#    prefer-ip-address: true
+
 eureka:
   client:
     service-url:
-     defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/
   instance:
     instance-id: zuul-7777.com
     prefer-ip-address: true

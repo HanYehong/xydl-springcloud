@@ -1,4 +1,4 @@
-package com.njit.xydl.life.common.feignservice.dto;
+package com.njit.xydl.life.common.feign.dto;
 
 /**
  * @author yehong.han

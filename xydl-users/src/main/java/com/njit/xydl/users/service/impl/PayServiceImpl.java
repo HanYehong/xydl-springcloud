@@ -5,7 +5,6 @@ import com.njit.xydl.users.entity.WechatUser;
 import com.njit.xydl.users.service.PayService;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
-import com.yehong.han.config.response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +19,8 @@ public class PayServiceImpl implements PayService {
 	@Autowired
 	private WechatUserMapper wechatUserMapper;
 
+	private static final int INSUFFICIENT = 2;
+
 	private static final int SUCCESS = 1;
 
 	private static final int FAIL = 0;
@@ -28,8 +29,8 @@ public class PayServiceImpl implements PayService {
 	@Override
 	public int payPersonToPerson(String accountA, String accountB, Double money) throws GatewayException {
 		int result = payProcess(accountA, money);
-		if (result == FAIL) {
-			return FAIL;
+		if (result == INSUFFICIENT) {
+			return INSUFFICIENT;
 		}
 		acceptProcess(accountB, money);
 		return SUCCESS;
@@ -39,8 +40,8 @@ public class PayServiceImpl implements PayService {
 	@Override
 	public int payPersonToTemporary(String accountA, Double money) throws GatewayException {
 		int result = payProcess(accountA, money);
-		if (result == FAIL) {
-			return FAIL;
+		if (result == INSUFFICIENT) {
+			return INSUFFICIENT;
 		}
 		temporaryProcess(money, 1);
 		return SUCCESS;
@@ -58,7 +59,7 @@ public class PayServiceImpl implements PayService {
 		WechatUser userA = getUserInfo(account);
 		double tempMoney = userA.getMoneyPackage() - money;
 		if (tempMoney < 0) {
-			return FAIL;
+			return INSUFFICIENT;
 		}
 		userA.setMoneyPackage(tempMoney);
 		updateUser(userA);

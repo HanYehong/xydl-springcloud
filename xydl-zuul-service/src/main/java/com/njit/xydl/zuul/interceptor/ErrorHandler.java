@@ -18,12 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class ErrorHandler implements ErrorController {
 
-    /**
-     * zuul的异常处理
-     *
-     * @param request HTTP请求
-     * @return API统一响应
-     */
     @RequestMapping("/error")
     public Response error(HttpServletRequest request, HttpServletResponse response) {
 

@@ -1,9 +1,11 @@
 package com.njit.xydl.life.express.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.njit.xydl.life.common.enums.StatusEnum;
+import com.njit.xydl.life.common.feign.UserService;
 import com.njit.xydl.life.express.service.ExpressService;
-import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.response.Response;
+import com.yehong.han.config.response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,30 +22,26 @@ public class ExpressController {
     @Autowired
     private ExpressService expressService;
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping("/listUnAcceptOrder")
     public Response listUnAcceptOrder() {
         return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.WAIT_ACCEPT.getCode()));
     }
 
-    @PostMapping("/listCompleteOrder")
-    public Response listCompleteOrder() throws GatewayException {
-        return Response.ok(
-                expressService.listExpressOrderByStatusAndPublishor(StatusEnum.COMPLETE.getCode()));
-    }
-
-    @PostMapping("/listUnCompleteOrder")
-    public Response listUnCompleteOrder() throws GatewayException {
-        return Response.ok(
-                expressService.listExpressOrderByStatusAndPublishor(StatusEnum.UN_COMPLETE.getCode()));
-    }
-
-    @PostMapping("/listDoingOrder")
-    public Response listDoingOrder() throws GatewayException {
-        return Response.ok(expressService.listDoingOrderByPublishor());
-    }
-
     @PostMapping("/test")
     public Response test() {
         return Response.ok();
+    }
+
+    @PostMapping("/test2")
+    public Response test2() {
+        Response response = userService.test();
+        System.out.println(JSON.toJSONString(response));
+        if (response.getCode() == 10000) {
+            return response;
+        }
+        return Response.ok(Status.FAIL, "请求远程服务失败");
     }
 }

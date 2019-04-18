@@ -25,9 +25,15 @@ public class SmsSendServiceImpl implements SmsSendService {
 		sendBody(phone, content);
 	}
 
+	@Override
+	public void sendForAccept(String phone, String orderNumber) throws IOException {
+		String content = "hi~同学，你的订单" + orderNumber + "已经被接单啦~快去看看吧，需要授权之后才可以代领~";
+		sendBody(phone, content);
+	}
+
 	private void sendBody(String phone, String content) throws IOException {
 		HttpClient client = new HttpClient();
-		PostMethod post = new PostMethod("http://sms.webchinese.cn/web_api/");
+		PostMethod post = new PostMethod("http://gbk.api.smschinese.cn/");
 		post.addRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=gbk");
 		NameValuePair[] data = {
 				new NameValuePair("Uid", UID),

@@ -9,4 +9,6 @@ import java.io.IOException;
 public interface SmsSendService {
 
 	void sendForRefuse(String phone) throws IOException;
+
+	void sendForAccept(String phone, String orderNumber) throws IOException;
 }
