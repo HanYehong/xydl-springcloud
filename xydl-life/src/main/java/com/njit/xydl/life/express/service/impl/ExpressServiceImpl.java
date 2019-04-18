@@ -1,7 +1,6 @@
 package com.njit.xydl.life.express.service.impl;
 
 import com.njit.xydl.life.common.entity.Express;
-import com.njit.xydl.life.common.entity.WechatUser;
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.feign.PayService;
 import com.njit.xydl.life.common.feign.UserService;
