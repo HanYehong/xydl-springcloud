@@ -21,7 +21,7 @@ public class SmsSendServiceImpl implements SmsSendService {
 	private static final String KEY = "d41d8cd98f00b204e980";
 
 	private static final String URL = "http://gbk.api.smschinese.cn/";
-	
+
 	@Override
 	public void sendForRefuse(String phone) throws IOException {
 		String content = "同学，很抱歉，您的接单没有征得发布者同意~不要灰心，再接再厉吧。友情提示：信誉值是会影响接单成功率的哦~";
