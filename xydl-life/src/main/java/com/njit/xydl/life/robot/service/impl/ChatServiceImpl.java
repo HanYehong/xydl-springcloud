@@ -32,6 +32,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public String chattingRobot(String content) {
+        System.out.println(content);
         return getString(getHTML(setParameter(content)));
     }
 

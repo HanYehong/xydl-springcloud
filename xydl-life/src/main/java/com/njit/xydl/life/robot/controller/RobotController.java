@@ -1,12 +1,11 @@
 package com.njit.xydl.life.robot.controller;
 
+import com.njit.xydl.life.robot.controller.dto.ChatDTO;
 import com.njit.xydl.life.robot.service.ChatService;
 import com.njit.xydl.life.robot.service.RecognizeService;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -26,8 +25,8 @@ public class RobotController {
     private RecognizeService recognizeService;
 
     @PostMapping("/chat")
-    public Response autoReplyRobot(String msg) {
-        return Response.ok(chatService.chattingRobot(msg));
+    public Response autoReplyRobot(@RequestBody ChatDTO param) {
+        return Response.ok(chatService.chattingRobot(param.getMsg()));
     }
 
     @PostMapping("/recognize")
