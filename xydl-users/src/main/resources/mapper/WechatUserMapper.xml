@@ -22,7 +22,7 @@
     authenticate_time, create_time, update_time, is_delete
   </sql>
 
-  <select id="selectByOpenId" resultType="com.njit.xydl.users.entity.WechatUser">
+  <select id="selectByOpenId" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from wechat_user

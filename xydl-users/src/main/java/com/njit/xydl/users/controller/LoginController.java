@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author yehong.han
  */
 @RestController
-@RequestMapping("user")
+@RequestMapping("login")
 public class LoginController {
 
     @Autowired
@@ -23,11 +23,6 @@ public class LoginController {
     @PostMapping("/getToken")
     public Response getSession(@RequestBody TokenDTO param) throws IOException {
         return Response.ok(loginService.login(param));
-    }
-
-    @PostMapping("/authorize")
-    public Response authorize(@RequestBody LoginDTO param) throws GatewayException {
-        return Response.ok(loginService.authorize(param));
     }
 
 }

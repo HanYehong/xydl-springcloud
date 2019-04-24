@@ -5,6 +5,7 @@ import com.njit.xydl.users.entity.WechatUser;
 import com.njit.xydl.users.service.PayService;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.exception.ValidException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -82,14 +83,14 @@ public class PayServiceImpl implements PayService {
 			}
 			RedisHelper.getRedisUtil().set("moneypackage.temporary", String.valueOf(totalMoney));
 		} catch (Exception e) {
-			throw new GatewayException("中间账户异常，请稍后再试");
+			throw new ValidException("中间账户异常，请稍后再试");
 		}
 	}
 
 	private WechatUser getUserInfo(String openId) throws GatewayException {
 		WechatUser user = wechatUserMapper.selectByOpenId(openId);
 		if (user == null) {
-			throw new GatewayException("无效付款");
+			throw new ValidException("无效付款");
 		}
 		return user;
 	}
@@ -97,7 +98,7 @@ public class PayServiceImpl implements PayService {
 	private void updateUser(WechatUser user) throws GatewayException {
 		int resultB = wechatUserMapper.updateByPrimaryKeySelective(user);
 		if (resultB < 1) {
-			throw new GatewayException("付款失败，请稍后再试");
+			throw new ValidException("付款失败，请稍后再试");
 		}
 	}
 }

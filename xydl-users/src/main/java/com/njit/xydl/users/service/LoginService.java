@@ -20,6 +20,4 @@ public interface LoginService {
 	 */
 	String login(TokenDTO param) throws IOException;
 
-	boolean authorize(LoginDTO param) throws GatewayException;
-
 }

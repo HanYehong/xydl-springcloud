@@ -1,3 +1,4 @@
+/*
 package com.njit.xydl.zuul.interceptor;
 
 import com.netflix.zuul.exception.ZuulException;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+*/
 /**
  * @author HanYehong
  * @date 2019/3/31 21:17
- */
+ *//*
+
 @RestController
 public class ErrorHandler implements ErrorController {
 
@@ -40,3 +43,4 @@ public class ErrorHandler implements ErrorController {
     }
 
 }
+*/

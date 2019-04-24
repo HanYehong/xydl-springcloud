@@ -1,5 +1,6 @@
 package com.njit.xydl.users.controller;
 
+import com.njit.xydl.users.controller.dto.LoginDTO;
 import com.njit.xydl.users.entity.WechatUser;
 import com.njit.xydl.users.service.UserService;
 import com.yehong.han.config.exception.GatewayException;
@@ -27,6 +28,17 @@ public class UserController {
 	@PostMapping("/checkRealIdentity")
 	public Boolean checkRealIdentity(@RequestParam("openId") String openId) {
 		return userService.checkRealIdentity(openId);
+	}
+
+	@PostMapping("/authorize")
+	public Response authorize(@RequestBody LoginDTO param) {
+		userService.authorize(param);
+		return Response.ok();
+	}
+
+	@GetMapping("/isAuthorize")
+	public Response isAuthorize() {
+		return Response.ok(userService.isAuthorize());
 	}
 
 	@PostMapping("/test")

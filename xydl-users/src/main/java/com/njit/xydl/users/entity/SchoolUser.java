@@ -7,7 +7,7 @@ public class SchoolUser {
 
     private String studentId;
 
-    private String name;
+    private String realName;
 
     private Boolean sex;
 
@@ -15,7 +15,7 @@ public class SchoolUser {
 
     private String major;
 
-    private String group;
+    private String groupClass;
 
     private Date createTime;
 
@@ -41,12 +41,12 @@ public class SchoolUser {
         this.studentId = studentId == null ? null : studentId.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
     public Boolean getSex() {
@@ -73,12 +73,12 @@ public class SchoolUser {
         this.major = major == null ? null : major.trim();
     }
 
-    public String getGroup() {
-        return group;
+    public String getGroupClass() {
+        return groupClass;
     }
 
-    public void setGroup(String group) {
-        this.group = group == null ? null : group.trim();
+    public void setGroupClass(String groupClass) {
+        this.groupClass = groupClass;
     }
 
     public Date getCreateTime() {
