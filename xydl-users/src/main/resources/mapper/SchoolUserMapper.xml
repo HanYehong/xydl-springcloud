@@ -4,18 +4,18 @@
   <resultMap id="BaseResultMap" type="com.njit.xydl.users.entity.SchoolUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="student_id" jdbcType="VARCHAR" property="studentId" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
     <result column="sex" jdbcType="BIT" property="sex" />
     <result column="academic" jdbcType="VARCHAR" property="academic" />
     <result column="major" jdbcType="VARCHAR" property="major" />
-    <result column="group" jdbcType="VARCHAR" property="group" />
+    <result column="group_class" jdbcType="VARCHAR" property="groupClass" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, student_id, name, sex, academic, major, group, create_time, update_time, is_delete, 
+    id, student_id, real_name, sex, academic, major, group_class, create_time, update_time, is_delete,
     password
   </sql>
   <select id="selectByStudentId" resultMap="BaseResultMap">
@@ -35,12 +35,12 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.njit.xydl.users.entity.SchoolUser">
-    insert into school_user (id, student_id, name, 
-      sex, academic, major, group, 
+    insert into school_user (id, student_id, real_name,
+      sex, academic, major, group_class,
       create_time, update_time, is_delete, 
       password)
-    values (#{id,jdbcType=BIGINT}, #{studentId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=BIT}, #{academic,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, #{group,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{studentId,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR},
+      #{sex,jdbcType=BIT}, #{academic,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, #{groupClass,jdbcType=VARCHAR},
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}, 
       #{password,jdbcType=VARCHAR})
   </insert>
@@ -54,7 +54,7 @@
         student_id,
       </if>
       <if test="name != null">
-        name,
+        real_name,
       </if>
       <if test="sex != null">
         sex,
@@ -66,7 +66,7 @@
         major,
       </if>
       <if test="group != null">
-        group,
+        group_class,
       </if>
       <if test="createTime != null">
         create_time,
@@ -89,7 +89,7 @@
         #{studentId,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+        #{realName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=BIT},
@@ -101,7 +101,7 @@
         #{major,jdbcType=VARCHAR},
       </if>
       <if test="group != null">
-        #{group,jdbcType=VARCHAR},
+        #{groupClass,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -124,7 +124,7 @@
         student_id = #{studentId,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+        real_name = #{realName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
         sex = #{sex,jdbcType=BIT},
@@ -136,7 +136,7 @@
         major = #{major,jdbcType=VARCHAR},
       </if>
       <if test="group != null">
-        group = #{group,jdbcType=VARCHAR},
+        group_class = #{groupClass,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -156,11 +156,11 @@
   <update id="updateByPrimaryKey" parameterType="com.njit.xydl.users.entity.SchoolUser">
     update school_user
     set student_id = #{studentId,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=BIT},
       academic = #{academic,jdbcType=VARCHAR},
       major = #{major,jdbcType=VARCHAR},
-      group = #{group,jdbcType=VARCHAR},
+      group_class = #{groupClass,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER},
