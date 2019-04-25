@@ -1,6 +1,7 @@
 package com.njit.xydl.users.service;
 
 import com.njit.xydl.users.controller.dto.LoginDTO;
+import com.njit.xydl.users.entity.SchoolUser;
 import com.njit.xydl.users.entity.WechatUser;
 import com.yehong.han.config.exception.GatewayException;
 
@@ -14,7 +15,7 @@ public interface UserService {
 
 	boolean checkRealIdentity(String openId);
 
-	void authorize(LoginDTO param);
+	SchoolUser authorize(LoginDTO param);
 
-	int isAuthorize();
+	Object isAuthorize();
 }

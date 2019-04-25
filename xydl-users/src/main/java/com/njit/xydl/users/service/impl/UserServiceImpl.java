@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void authorize(LoginDTO param) {
+	public SchoolUser authorize(LoginDTO param) {
 		if (param.getUsername() == null) {
 			throw new ValidException("用户名不能为空");
 		}
@@ -60,13 +60,17 @@ public class UserServiceImpl implements UserService {
 		WechatUser wechatUser = getUser();
 		wechatUser.setStudentId(param.getUsername());
 		wechatUserMapper.updateByPrimaryKeySelective(wechatUser);
+		return schoolUser;
 	}
 
 	@Override
-	public int isAuthorize() {
+	public Object isAuthorize() {
 		WechatUser wechatUser = getUser();
 		if (wechatUser.getAuthenticateTime() != null && !StringUtils.isBlank(wechatUser.getStudentId())) {
-			return 1;
+			SchoolUser schoolUser = schoolUserMapper.selectByStudentId(wechatUser.getStudentId());
+			if (schoolUser != null) {
+				return schoolUser;
+			}
 		}
 		return 0;
 	}

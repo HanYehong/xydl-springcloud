@@ -16,10 +16,11 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="money_package" jdbcType="INTEGER" property="moneyPackage" />
   </resultMap>
   <sql id="Base_Column_List">
     id, open_id, nickname, avatar_url, city, province, country, gender, language, student_id, 
-    authenticate_time, create_time, update_time, is_delete
+    authenticate_time, create_time, update_time, is_delete, money_package
   </sql>
 
   <select id="selectByOpenId" resultMap="BaseResultMap">

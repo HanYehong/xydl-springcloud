@@ -32,8 +32,7 @@ public class UserController {
 
 	@PostMapping("/authorize")
 	public Response authorize(@RequestBody LoginDTO param) {
-		userService.authorize(param);
-		return Response.ok();
+		return Response.ok(userService.authorize(param));
 	}
 
 	@GetMapping("/isAuthorize")
