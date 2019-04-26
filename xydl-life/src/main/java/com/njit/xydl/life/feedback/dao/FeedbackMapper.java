@@ -1,6 +1,7 @@
 package com.njit.xydl.life.feedback.dao;
 
 import com.njit.xydl.life.common.entity.Feedback;
+import org.apache.ibatis.annotations.Param;
 
 public interface FeedbackMapper {
     int deleteByPrimaryKey(Byte id);
