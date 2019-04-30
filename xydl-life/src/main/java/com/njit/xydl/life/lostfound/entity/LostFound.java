@@ -1,5 +1,6 @@
 package com.njit.xydl.life.lostfound.entity;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -8,8 +9,10 @@ public class LostFound {
 
     private String lostNumber;
 
+    @NotNull(message = "物品类型必选")
     private Integer lostType;
 
+    @NotNull(message = "失物地点必选")
     private Integer lostLocation;
 
     private String content;

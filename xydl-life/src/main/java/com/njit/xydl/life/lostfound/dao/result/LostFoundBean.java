@@ -2,8 +2,8 @@ package com.njit.xydl.life.lostfound.dao.result;
 
 import com.njit.xydl.life.lostfound.entity.LostFound;
 import com.njit.xydl.life.lostfound.entity.LostFoundImage;
-import org.apache.catalina.LifecycleState;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -11,6 +11,7 @@ import java.util.List;
  * @date 2019/4/30
  */
 public class LostFoundBean extends LostFound {
+	@Valid
 	private List<LostFoundImage> imageList;
 
 	@Override

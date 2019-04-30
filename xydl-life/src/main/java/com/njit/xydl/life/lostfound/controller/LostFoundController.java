@@ -1,9 +1,11 @@
 package com.njit.xydl.life.lostfound.controller;
 
 import com.njit.xydl.life.lostfound.controller.request.SearchRequest;
+import com.njit.xydl.life.lostfound.dao.result.LostFoundBean;
 import com.njit.xydl.life.lostfound.service.LostFoundService;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +24,11 @@ public class LostFoundController {
 	@PostMapping("/select")
 	public Response listAllLostFoundSelective(@RequestBody SearchRequest param) {
 		return Response.ok(lostFoundService.listAllLostFoundSelective(param));
+	}
+
+	@PostMapping("/publish")
+	public Response publishLostFound(@Validated @RequestBody LostFoundBean param) {
+		lostFoundService.publishLostFound(param);
+		return Response.ok();
 	}
 }

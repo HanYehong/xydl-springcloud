@@ -1,5 +1,6 @@
 package com.njit.xydl.life.lostfound.entity;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 public class LostFoundImage {
@@ -7,6 +8,7 @@ public class LostFoundImage {
 
     private String lostNumber;
 
+    @NotBlank(message = "图片url必填")
     private String imageUrl;
 
     private Date createTime;
