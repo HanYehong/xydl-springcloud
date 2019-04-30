@@ -7,6 +7,8 @@ import com.njit.xydl.life.lostfound.dao.LostFoundMapper;
 import com.njit.xydl.life.lostfound.dao.result.LostFoundBean;
 import com.njit.xydl.life.lostfound.entity.LostFound;
 import com.njit.xydl.life.lostfound.service.LostFoundService;
+import com.yehong.han.config.exception.ValidException;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,6 +51,21 @@ public class LostFoundServiceImpl implements LostFoundService {
 			x.setLostNumber(lostNumber);
 			imageMapper.insertSelective(x);
 		});
+	}
+
+	@Override
+	public void deleteLostFound(String lostNumber) {
+		LostFound lostFound = getLostFoundByLostNumber(lostNumber);
+		lostFound.setIsDelete(1);
+		lostFoundMapper.updateByPrimaryKeySelective(lostFound);
+	}
+
+	private LostFound getLostFoundByLostNumber(String lostNumber) {
+		LostFound lostFound = lostFoundMapper.selectByLostNumber(lostNumber);
+		if (lostFound == null) {
+			throw new ValidException("该失物招领不存在");
+		}
+		return lostFound;
 	}
 
 	private String generateLostNumber() {

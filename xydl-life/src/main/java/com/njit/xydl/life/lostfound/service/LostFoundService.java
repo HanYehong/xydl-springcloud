@@ -14,4 +14,6 @@ public interface LostFoundService {
 	List<LostFound> listAllLostFoundSelective(SearchRequest param);
 
 	void publishLostFound(LostFoundBean param);
+
+	void deleteLostFound(String lostNumber);
 }

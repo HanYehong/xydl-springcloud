@@ -43,15 +43,21 @@
     </if>
     order by lf.create_time asc
   </select>
+  <select id="selectByLostNumber" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from lost_found
+    where lost_number = #{lostNumber} and is_delete = 0
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from lost_found
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT} and is_delete = 0
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from lost_found
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT} and is_delete = 0
   </delete>
   <insert id="insert" parameterType="com.njit.xydl.life.lostfound.entity.LostFound">
     insert into lost_found (id, lost_number, lost_type, 
@@ -141,7 +147,7 @@
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT} and is_delete = 0
   </update>
   <update id="updateByPrimaryKey" parameterType="com.njit.xydl.life.lostfound.entity.LostFound">
     update lost_found
@@ -152,6 +158,6 @@
       creator = #{creator,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT} and is_delete = 0
   </update>
 </mapper>
