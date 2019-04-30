@@ -1,6 +1,7 @@
 package com.njit.xydl.life.lostfound.dao;
 
 import com.njit.xydl.life.lostfound.controller.request.SearchRequest;
+import com.njit.xydl.life.lostfound.dao.result.LostFoundBean;
 import com.njit.xydl.life.lostfound.entity.LostFound;
 import org.apache.ibatis.annotations.Param;
 
@@ -22,4 +23,6 @@ public interface LostFoundMapper {
     List<LostFound> selectSelective(SearchRequest param);
 
     LostFound selectByLostNumber(@Param("lostNumber") String lostNumber);
+
+    List<LostFound> selectByCreator(@Param("creator") String creator);
 }

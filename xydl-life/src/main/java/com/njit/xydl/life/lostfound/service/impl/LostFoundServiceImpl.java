@@ -60,6 +60,11 @@ public class LostFoundServiceImpl implements LostFoundService {
 		lostFoundMapper.updateByPrimaryKeySelective(lostFound);
 	}
 
+	@Override
+	public List<LostFound> listLostFoundByPerson() {
+		return lostFoundMapper.selectByCreator(UserUtil.getCurrentUserId());
+	}
+
 	private LostFound getLostFoundByLostNumber(String lostNumber) {
 		LostFound lostFound = lostFoundMapper.selectByLostNumber(lostNumber);
 		if (lostFound == null) {

@@ -49,6 +49,12 @@
     from lost_found
     where lost_number = #{lostNumber} and is_delete = 0
   </select>
+  <select id="selectByCreator" resultMap="MultiResultMap">
+    select
+    lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, lf.creator, lf.create_time, lfi.image_url
+    from lost_found lf left join lost_found_image lfi on lf.lost_number = lfi.lost_number
+    where creator = #{creator} and lf.is_delete = 0
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

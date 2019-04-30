@@ -16,4 +16,6 @@ public interface LostFoundService {
 	void publishLostFound(LostFoundBean param);
 
 	void deleteLostFound(String lostNumber);
+
+	List<LostFound> listLostFoundByPerson();
 }
