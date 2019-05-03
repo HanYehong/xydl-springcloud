@@ -7,6 +7,7 @@ import com.njit.xydl.life.express.service.ExpressService;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class ExpressController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/listUnAcceptOrder")
+    @GetMapping("/listUnAcceptOrder")
     public Response listUnAcceptOrder() {
         return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.WAIT_ACCEPT.getCode()));
     }

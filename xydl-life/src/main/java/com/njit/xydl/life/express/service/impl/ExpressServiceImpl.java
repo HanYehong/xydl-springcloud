@@ -12,12 +12,14 @@ import com.njit.xydl.life.express.service.SmsSendService;
 import com.njit.xydl.life.express.service.bo.OrderListBO;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.exception.ValidException;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -53,14 +55,14 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public OrderListBO listAllOrderByPublishor() throws GatewayException {
+    public OrderListBO listAllOrderByPublishor(){
         Express param = new Express();
         param.setPublishor(UserUtil.getCurrentUserId());
         return listAllOrderByPerson(param);
     }
 
     @Override
-    public OrderListBO listAllOrderByAcceptor() throws GatewayException {
+    public OrderListBO listAllOrderByAcceptor() {
         Express param = new Express();
         param.setAcceptor(UserUtil.getCurrentUserId());
         return listAllOrderByPerson(param);
@@ -83,23 +85,23 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void catchOrder(String orderNumber) throws GatewayException {
+    public void catchOrder(String orderNumber) {
         checkRealIdentity();
         Express express = expressMapper.selectByOrderNumber(orderNumber);
         if (StringUtils.isBlank(express.getAcceptor())) {
-            throw new GatewayException("该订单已经被接单啦，试试其它的吧~");
+            throw new ValidException("该订单已经被接单啦，试试其它的吧~");
         }
         if (express.getPublishor().equals(UserUtil.getCurrentUserId())) {
-            throw new GatewayException("不能接自己的单子哦~");
+            throw new ValidException("不能接自己的单子哦~");
         }
         if (!express.getStatus().equals(StatusEnum.WAIT_ACCEPT.getCode())) {
-            throw new GatewayException("此订单状态不允许被接单");
+            throw new ValidException("此订单状态不允许被接单");
         }
         //加锁
         long time = System.currentTimeMillis() + UUID.randomUUID().hashCode() + TIMOUT;
         try {
             if (!RedisHelper.getRedisUtil().lock(LOCK_KEY_CATCH, String.valueOf(time))) {
-                throw new GatewayException("该订单已经被接单啦，试试其它的吧~");
+                throw new ValidException("该订单已经被接单啦，试试其它的吧~");
             }
             express.setAcceptor(UserUtil.getCurrentUserId());
             express.setAcceptTime(new Date());
@@ -108,7 +110,7 @@ public class ExpressServiceImpl implements ExpressService {
             smsSendService.sendForAccept("15189809881", express.getOrderNumber());
         } catch (Exception e) {
             e.printStackTrace();
-            throw new GatewayException(e.getMessage());
+            throw new ValidException(e.getMessage());
         } finally {
             // 解锁
             RedisHelper.getRedisUtil().unlock(LOCK_KEY_CATCH, String.valueOf(time));
@@ -117,7 +119,7 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void authorization(String orderNumber) throws GatewayException {
+    public void authorization(String orderNumber) {
         Express express = getExpressOrder(orderNumber);
         express.setStatus(StatusEnum.WAIT_SEND.getCode());
         express.setUpdateTime(new Date());
@@ -125,34 +127,34 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void refuseCurrentAccept(String orderNumber) throws Exception {
+    public void refuseCurrentAccept(String orderNumber) throws IOException {
         Express express = getExpressOrder(orderNumber);
         if (!express.getStatus().equals(StatusEnum.WAIT_AUTHORIZATION.getCode())) {
-            throw new GatewayException("非待授权订单不允许被拒绝接单");
+            throw new ValidException("非待授权订单不允许被拒绝接单");
         }
         int result = publishAgain(express);
         if (result < 1) {
-            throw new GatewayException("系统不稳定，请稍后再试~");
+            throw new ValidException("系统不稳定，请稍后再试~");
         }
         smsSendService.sendForRefuse("15189809881");
     }
 
     @Override
-    public void sended(String orderNumber) throws GatewayException {
+    public void sended(String orderNumber) {
         Express express = getExpressOrder(orderNumber);
         express.setStatus(StatusEnum.WAIT_CONFIRM.getCode());
         expressMapper.updateByPrimaryKeySelective(express);
     }
 
     @Override
-    public void received(String orderNumber) throws GatewayException {
+    public void received(String orderNumber) {
         Express express = getExpressOrder(orderNumber);
         express.setStatus(StatusEnum.COMPLETE.getCode());
         expressMapper.updateByPrimaryKeySelective(express);
     }
 
     @Override
-    public void cancelOrder(String orderNumber) throws GatewayException {
+    public void cancelOrder(String orderNumber) {
         String openId = UserUtil.getCurrentUserId();
         Express express = getExpressOrder(orderNumber);
         if (express.getStatus().equals(StatusEnum.WAIT_AUTHORIZATION.getCode()) || express.getStatus().equals(StatusEnum.WAIT_ACCEPT.getCode())) {
@@ -177,13 +179,13 @@ public class ExpressServiceImpl implements ExpressService {
                 param.setMoney(express.getPrice());
                 int result = payService.payTemporaryToPerson(param);
                 if (result == 0) {
-                    throw new GatewayException("服务繁忙，请稍后再试");
+                    throw new ValidException("服务繁忙，请稍后再试");
                 }else if (result == 2) {
-                    throw new GatewayException("余额不足，请充值");
+                    throw new ValidException("余额不足，请充值");
                 }
             }
         } else {
-            throw new GatewayException("此状态下不允许被取消");
+            throw new ValidException("此状态下不允许被取消");
         }
         express.setStatus(StatusEnum.UN_COMPLETE.getCode());
         express.setUpdateTime(new Date());
@@ -191,7 +193,7 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void publishExpressOrder(Express express) throws GatewayException {
+    public void publishExpressOrder(Express express){
         checkRealIdentity();
         // 发布者打款至中间账户
         PayDTO param = new PayDTO();
@@ -199,9 +201,9 @@ public class ExpressServiceImpl implements ExpressService {
         param.setMoney(express.getPrice());
         int result = payService.payPersonToTemporary(param);
         if (result == 0) {
-            throw new GatewayException("服务繁忙，请稍后再试");
+            throw new ValidException("服务繁忙，请稍后再试");
         }else if (result == 2) {
-            throw new GatewayException("余额不足，请充值");
+            throw new ValidException("余额不足，请充值");
         }
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
@@ -210,14 +212,14 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     @Override
-    public void rePublish(String orderNumber) throws GatewayException {
+    public void rePublish(String orderNumber) {
         Express express = getExpressOrder(orderNumber);
         if (!express.getStatus().equals(StatusEnum.UN_COMPLETE.getCode())) {
-            throw new GatewayException("非未完成订单不允许被重新发布");
+            throw new ValidException("非未完成订单不允许被重新发布");
         }
         int result = publishAgain(express);
         if (result < 1) {
-            throw new GatewayException("系统不稳定，请稍后再试~");
+            throw new ValidException("系统不稳定，请稍后再试~");
         }
     }
 
@@ -229,13 +231,13 @@ public class ExpressServiceImpl implements ExpressService {
         return expressMapper.updateByPrimaryKeySelective(express);
     }
 
-    private Express getExpressOrder(String orderNumber) throws GatewayException {
+    private Express getExpressOrder(String orderNumber) {
         if (StringUtils.isBlank(orderNumber)) {
-            throw new GatewayException("订单号为空");
+            throw new ValidException("订单号为空");
         }
         Express express = expressMapper.selectByOrderNumber(orderNumber);
         if (express == null) {
-            throw new GatewayException("该订单不存在");
+            throw new ValidException("该订单不存在");
         }
         return express;
     }
@@ -246,17 +248,17 @@ public class ExpressServiceImpl implements ExpressService {
         return newNumber;
     }
 
-    private Object checkResponse(Response response) throws GatewayException {
+    private Object checkResponse(Response response) {
         if (response.getCode() == Status.FAIL.getCode()) {
-            throw new GatewayException("服务器繁忙，请稍后再试");
+            throw new ValidException("服务器繁忙，请稍后再试");
         }
         return response.getData();
     }
 
-    private void checkRealIdentity() throws GatewayException {
+    private void checkRealIdentity() {
         boolean check = userService.checkRealIdentity(UserUtil.getCurrentUserId());
         if (!check) {
-            throw new GatewayException("还没有进行实名认证不能接单哦~ 实名渠道：生活 -> 我的 -> 我的实名认证");
+            throw new ValidException("还没有进行实名认证不能接单哦~ 实名渠道：生活 -> 我的 -> 我的实名认证");
         }
     }
 
