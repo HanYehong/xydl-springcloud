@@ -1,16 +1,15 @@
 package com.njit.xydl.life.express.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.feign.UserService;
+import com.njit.xydl.life.express.controller.request.ExpressRequest;
 import com.njit.xydl.life.express.service.ExpressService;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author HanYehong
@@ -29,6 +28,64 @@ public class ExpressController {
     @GetMapping("/listUnAcceptOrder")
     public Response listUnAcceptOrder() {
         return Response.ok(expressService.listExpressOrderByStatus(StatusEnum.WAIT_ACCEPT.getCode()));
+    }
+
+    @GetMapping("/listByPublishor")
+    public Response listAllOrderByPublishor() {
+        return Response.ok(expressService.listAllOrderByPublishor());
+    }
+
+    @GetMapping("/listByAcceptor")
+    public Response listAllOrderByAcceptor() {
+        return Response.ok(expressService.listAllOrderByAcceptor());
+    }
+
+    @PostMapping("/catch")
+    public Response catchOrder(@RequestBody ExpressRequest params) {
+        expressService.catchOrder(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/authorization")
+    public Response authorization(@RequestBody ExpressRequest params) {
+        expressService.authorization(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/refuseAccept")
+    public Response refuseCurrentAccept(@RequestBody ExpressRequest params) throws Exception {
+        expressService.refuseCurrentAccept(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/sended")
+    public Response sended(@RequestBody ExpressRequest params) {
+        expressService.sended(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/received")
+    public Response received(@RequestBody ExpressRequest params) {
+        expressService.received(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/cancel")
+    public Response cancelOrder(@RequestBody ExpressRequest params) {
+        expressService.cancelOrder(params.getOrderNumber());
+        return Response.ok();
+    }
+
+    @PostMapping("/publish")
+    public Response publishExpressOrder(@RequestBody Express param) {
+        expressService.publishExpressOrder(param);
+        return Response.ok();
+    }
+
+    @PostMapping("/rePublish")
+    public Response rePublish(@RequestBody ExpressRequest params) {
+        expressService.rePublish(params.getOrderNumber());
+        return Response.ok();
     }
 
     @PostMapping("/test")
