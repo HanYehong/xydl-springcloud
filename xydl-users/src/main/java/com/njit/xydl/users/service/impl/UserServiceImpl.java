@@ -71,6 +71,7 @@ public class UserServiceImpl implements UserService {
 			if (schoolUser != null) {
 				return schoolUser;
 			}
+			return 0;
 		}
 		return 0;
 	}

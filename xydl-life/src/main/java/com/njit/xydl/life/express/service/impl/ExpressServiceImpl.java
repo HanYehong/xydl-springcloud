@@ -4,6 +4,7 @@ import com.njit.xydl.life.common.entity.Express;
 import com.njit.xydl.life.common.enums.StatusEnum;
 import com.njit.xydl.life.common.feign.PayService;
 import com.njit.xydl.life.common.feign.UserService;
+import com.njit.xydl.life.common.feign.dto.OpenIdDTO;
 import com.njit.xydl.life.common.feign.dto.PayDTO;
 import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
@@ -194,9 +195,9 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void publishExpressOrder(Express express){
-        /*checkRealIdentity();
+        checkRealIdentity();
         // 发布者打款至中间账户
-        PayDTO param = new PayDTO();
+        /*PayDTO param = new PayDTO();
         param.setAccount(UserUtil.getCurrentUserId());
         param.setMoney(express.getPrice());
         int result = payService.payPersonToTemporary(param);
@@ -256,9 +257,11 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     private void checkRealIdentity() {
-        boolean check = userService.checkRealIdentity(UserUtil.getCurrentUserId());
+        OpenIdDTO param = new OpenIdDTO();
+        param.setOpenId(UserUtil.getCurrentUserId());
+        boolean check = userService.checkRealIdentity(param);
         if (!check) {
-            throw new ValidException("还没有进行实名认证不能接单哦~ 实名渠道：生活 -> 我的 -> 我的实名认证");
+            throw new ValidException("还没有进行实名认证不能接单哦~ 实名渠道：个人中心 -> 我的实名认证");
         }
     }
 

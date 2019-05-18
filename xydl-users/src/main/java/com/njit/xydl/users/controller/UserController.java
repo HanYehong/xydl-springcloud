@@ -1,6 +1,8 @@
 package com.njit.xydl.users.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.njit.xydl.users.controller.dto.LoginDTO;
+import com.njit.xydl.users.controller.dto.OpenIdDTO;
 import com.njit.xydl.users.entity.WechatUser;
 import com.njit.xydl.users.service.UserService;
 import com.yehong.han.config.exception.GatewayException;
@@ -26,8 +28,9 @@ public class UserController {
 	}
 
 	@PostMapping("/checkRealIdentity")
-	public Boolean checkRealIdentity(@RequestParam("openId") String openId) {
-		return userService.checkRealIdentity(openId);
+	public Boolean checkRealIdentity(@RequestBody OpenIdDTO param) {
+		System.out.println("param=====" + JSON.toJSONString(param));
+		return userService.checkRealIdentity(param.getOpenId());
 	}
 
 	@PostMapping("/authorize")

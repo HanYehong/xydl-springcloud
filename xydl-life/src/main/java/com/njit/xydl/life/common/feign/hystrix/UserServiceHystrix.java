@@ -1,9 +1,11 @@
 package com.njit.xydl.life.common.feign.hystrix;
 
 import com.njit.xydl.life.common.feign.UserService;
+import com.njit.xydl.life.common.feign.dto.OpenIdDTO;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @author yehong.han
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class UserServiceHystrix implements UserService {
 
 	@Override
-	public Boolean checkRealIdentity(String openId) {
+	public Boolean checkRealIdentity(OpenIdDTO param) {
 		return false;
 	}
 
