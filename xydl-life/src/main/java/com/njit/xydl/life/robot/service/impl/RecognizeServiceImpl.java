@@ -1,5 +1,7 @@
 package com.njit.xydl.life.robot.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.njit.xydl.life.common.util.BaseImg64;
 import com.njit.xydl.life.robot.service.RecognizeService;
 import org.apache.http.HttpResponse;
@@ -31,7 +33,7 @@ public class RecognizeServiceImpl implements RecognizeService {
 
     @Override
     public String recognitionRobot(String imageUrl) throws IOException, URISyntaxException {
-
+        System.out.println("图片地址：" + imageUrl);
         return checkUrl(imageUrl);
     }
 
@@ -146,9 +148,21 @@ public class RecognizeServiceImpl implements RecognizeService {
         if (response.getStatusLine().getStatusCode() == 200) {
             String str;
             try {
+                StringBuilder result = new StringBuilder();
                 // 读取服务器返回过来的json字符串数据
                 str = EntityUtils.toString(response.getEntity());
-                return str;
+                com.alibaba.fastjson.JSONObject jsonStr = JSON.parseObject(str);
+                JSONArray jsonArray = jsonStr.getJSONArray("words_result");
+                if (jsonArray == null) {
+                    result.append("图片无文字");
+                    return result.toString();
+                }
+                for (Object o : jsonArray) {
+                    result.append(((com.alibaba.fastjson.JSONObject)o).get("words"));
+                }
+                System.out.println("读取服务器返回过来的json字符串数据：" + str);
+                System.out.println("解析后的字符串数据：" + result.toString());
+                return result.length() > 0 ? result.toString() : "图片无文字";
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;

@@ -107,7 +107,7 @@ public class ExpressServiceImpl implements ExpressService {
             express.setAcceptTime(new Date());
             express.setStatus(StatusEnum.WAIT_AUTHORIZATION.getCode());
             expressMapper.updateByPrimaryKeySelective(express);
-            smsSendService.sendForAccept("15189809881", express.getOrderNumber());
+            smsSendService.sendForAccept(express.getPhone(), express.getOrderNumber());
         } catch (Exception e) {
             e.printStackTrace();
             throw new ValidException(e.getMessage());
@@ -194,7 +194,7 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void publishExpressOrder(Express express){
-        checkRealIdentity();
+        /*checkRealIdentity();
         // 发布者打款至中间账户
         PayDTO param = new PayDTO();
         param.setAccount(UserUtil.getCurrentUserId());
@@ -204,7 +204,7 @@ public class ExpressServiceImpl implements ExpressService {
             throw new ValidException("服务繁忙，请稍后再试");
         }else if (result == 2) {
             throw new ValidException("余额不足，请充值");
-        }
+        }*/
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
         express.setStatus(StatusEnum.WAIT_ACCEPT.getCode());

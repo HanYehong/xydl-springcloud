@@ -18,4 +18,6 @@ public interface LostFoundService {
 	void deleteLostFound(String lostNumber);
 
 	List<LostFound> listLostFoundByPerson();
+
+	LostFound getLostFound(String lostNumber);
 }

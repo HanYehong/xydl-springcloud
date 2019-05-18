@@ -17,7 +17,17 @@ public class LostFound {
 
     private String content;
 
+    private String contactWay;
+
     private String creator;
+
+    public String getContactWay() {
+        return contactWay;
+    }
+
+    public void setContactWay(String contactWay) {
+        this.contactWay = contactWay;
+    }
 
     private Date createTime;
 

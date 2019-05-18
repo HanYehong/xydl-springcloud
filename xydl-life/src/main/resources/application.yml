@@ -17,20 +17,20 @@ spring:
   application:
     name: xydl-life
 
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
 
 #eureka:
 #  client:
 #    service-url:
 #      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:5001/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:5001/eureka/
 
 feign:
   hystrix:

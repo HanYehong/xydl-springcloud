@@ -2,23 +2,23 @@ server:
   port: 5003
 
 #eureka本身不进行注册
-#eureka:
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: false
-#    service-url:
-#     defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/
-#  instance:
-#    hostname: eureka5003.com
-#    instance-id: eureka5003.com
-
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/
+     defaultZone: http://eureka5001.com:5001/eureka/,http://eureka5002.com:5002/eureka/
   instance:
     hostname: eureka5003.com
     instance-id: eureka5003.com
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/
+#  instance:
+#    hostname: eureka5003.com
+#    instance-id: eureka5003.com
 

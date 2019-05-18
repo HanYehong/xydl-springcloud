@@ -6,6 +6,7 @@
     <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
     <result column="publishor" jdbcType="VARCHAR" property="publishor" />
     <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="express_type" jdbcType="INTEGER" property="size" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
@@ -22,8 +23,8 @@
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, order_number, publishor, size, description, name, phone, pickup_code, destination, 
-    special_attention, order_deadline_date, price, acceptor, status, accept_time, create_time, 
+    id, order_number, publishor, size, express_type, description, `name`, phone, pickup_code, destination,
+    special_attention, order_deadline_date, price, acceptor, `status`, accept_time, create_time,
     update_time, is_delete
   </sql>
   <select id="selectByOrderNumber" resultMap="BaseResultMap">
@@ -36,13 +37,13 @@
     select
     <include refid="Base_Column_List" />
     from express_order
-    where status = #{status} and is_delete = 0
+    where `status` = #{status} and is_delete = 0
   </select>
   <select id="selectExpressOrderByStatusAndPublishor" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from express_order
-    where status = #{status} and and publishor = #{publishor} and is_delete = 0
+    where `status` = #{status} and publishor = #{publishor} and is_delete = 0
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -56,14 +57,14 @@
   </delete>
   <insert id="insert" parameterType="com.njit.xydl.life.common.entity.Express">
     insert into express_order (id, order_number, publishor, 
-      size, description, name, 
+      size, express_type, description, `name`,
       phone, pickup_code, destination, 
       special_attention, order_deadline_date, 
-      price, acceptor, status, 
+      price, acceptor, `status`,
       accept_time, create_time, update_time, 
       is_delete)
     values (#{id,jdbcType=BIGINT}, #{orderNumber,jdbcType=VARCHAR}, #{publishor,jdbcType=VARCHAR},
-      #{size,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{size,jdbcType=INTEGER}, #{expressType,jdbcType=INTEGER} ,  #{description,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
       #{phone,jdbcType=VARCHAR}, #{pickupCode,jdbcType=VARCHAR}, #{destination,jdbcType=VARCHAR},
       #{specialAttention,jdbcType=VARCHAR}, #{orderDeadlineDate,jdbcType=TIMESTAMP},
       #{price,jdbcType=DOUBLE}, #{acceptor,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
@@ -85,11 +86,14 @@
       <if test="size != null">
         size,
       </if>
+      <if test="expressType != null">
+        express_type,
+      </if>
       <if test="description != null">
         description,
       </if>
       <if test="name != null">
-        name,
+        `name`,
       </if>
       <if test="phone != null">
         phone,
@@ -113,7 +117,7 @@
         acceptor,
       </if>
       <if test="status != null">
-        status,
+        `status`,
       </if>
       <if test="acceptTime != null">
         accept_time,
@@ -140,6 +144,9 @@
       </if>
       <if test="size != null">
         #{size,jdbcType=INTEGER},
+      </if>
+      <if test="expressType != null">
+        #{expressType, jdbcType=INTEGER},
       </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
@@ -197,11 +204,14 @@
       <if test="size != null">
         size = #{size,jdbcType=INTEGER},
       </if>
+      <if test="expressType != null">
+        express_type = #{expressType,jdbcType=INTEGER},
+      </if>
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
+        `name` = #{name,jdbcType=VARCHAR},
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
@@ -225,7 +235,7 @@
         acceptor = #{acceptor,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
+        `status` = #{status,jdbcType=INTEGER},
       </if>
       <if test="acceptTime != null">
         accept_time = #{acceptTime,jdbcType=TIMESTAMP},
@@ -243,11 +253,12 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.njit.xydl.life.common.entity.Express">
-    update express_order
+    update express_order set
       publishor = #{publishor,jdbcType=VARCHAR},
       size = #{size,jdbcType=INTEGER},
+      express_type = #{expressType,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       pickup_code = #{pickupCode,jdbcType=VARCHAR},
       destination = #{destination,jdbcType=VARCHAR},
@@ -255,7 +266,7 @@
       order_deadline_date = #{orderDeadlineDate,jdbcType=TIMESTAMP},
       price = #{price,jdbcType=DOUBLE},
       acceptor = #{acceptor,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
       accept_time = #{acceptTime,jdbcType=TIMESTAMP},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -278,6 +289,9 @@
     </if>
     <if test="size != null">
       and `size` = #{size}
+    </if>
+    <if test="expressType != null">
+      and express_type = #{expressType}
     </if>
     <if test="description != null">
       and description = #{description}
@@ -307,7 +321,7 @@
       and acceptor = #{acceptor}
     </if>
     <if test="status != null">
-      and status = #{status}
+      and `status` = #{status}
     </if>
     <if test="acceptTime != null">
       and accept_time = #{acceptTime}

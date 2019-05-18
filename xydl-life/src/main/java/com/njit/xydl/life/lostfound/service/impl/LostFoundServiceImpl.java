@@ -65,6 +65,11 @@ public class LostFoundServiceImpl implements LostFoundService {
 		return lostFoundMapper.selectByCreator(UserUtil.getCurrentUserId());
 	}
 
+	@Override
+	public LostFound getLostFound(String lostNumber) {
+		return getLostFoundByLostNumber(lostNumber);
+	}
+
 	private LostFound getLostFoundByLostNumber(String lostNumber) {
 		LostFound lostFound = lostFoundMapper.selectByLostNumber(lostNumber);
 		if (lostFound == null) {

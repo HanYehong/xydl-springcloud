@@ -7,6 +7,7 @@
     <result column="lost_type" jdbcType="INTEGER" property="lostType" />
     <result column="lost_location" jdbcType="INTEGER" property="lostLocation" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="contact_way" jdbcType="VARCHAR" property="contactWay" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
@@ -17,6 +18,7 @@
     <result column="lost_type" jdbcType="INTEGER" property="lostType" />
     <result column="lost_location" jdbcType="INTEGER" property="lostLocation" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="contact_way" jdbcType="VARCHAR" property="contactWay" />
     <result column="creator" jdbcType="VARCHAR" property="creator" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
@@ -25,11 +27,11 @@
     </collection>
   </resultMap>
   <sql id="Base_Column_List">
-    id, lost_number, lost_type, lost_location, content, creator, create_time, is_delete
+    id, lost_number, lost_type, lost_location, content, contact_way, creator, create_time, is_delete
   </sql>
   <select id="selectSelective" parameterType="com.njit.xydl.life.lostfound.controller.request.SearchRequest" resultMap="MultiResultMap">
     select
-      lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, lf.creator, lf.create_time, lfi.image_url
+      lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, lf.contact_way, lf.creator, lf.create_time, lfi.image_url
     from lost_found lf left join lost_found_image lfi on lf.lost_number = lfi.lost_number
     where lf.is_delete = 0
     <if test="lostType != null">
@@ -43,15 +45,15 @@
     </if>
     order by lf.create_time asc
   </select>
-  <select id="selectByLostNumber" resultMap="BaseResultMap">
+  <select id="selectByLostNumber" resultMap="MultiResultMap">
     select
-    <include refid="Base_Column_List" />
-    from lost_found
-    where lost_number = #{lostNumber} and is_delete = 0
+    lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, contact_way, lf.creator, lf.create_time, lfi.image_url
+    from lost_found lf left join lost_found_image lfi on lf.lost_number = lfi.lost_number
+    where lf.lost_number = #{lostNumber} and lf.is_delete = 0
   </select>
   <select id="selectByCreator" resultMap="MultiResultMap">
     select
-    lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, lf.creator, lf.create_time, lfi.image_url
+    lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, contact_way, lf.creator, lf.create_time, lfi.image_url
     from lost_found lf left join lost_found_image lfi on lf.lost_number = lfi.lost_number
     where creator = #{creator} and lf.is_delete = 0
   </select>
@@ -67,10 +69,10 @@
   </delete>
   <insert id="insert" parameterType="com.njit.xydl.life.lostfound.entity.LostFound">
     insert into lost_found (id, lost_number, lost_type, 
-      lost_location, content, creator, 
+      lost_location, content, contact_way, creator,
       create_time, is_delete)
     values (#{id,jdbcType=BIGINT}, #{lostNumber,jdbcType=VARCHAR}, #{lostType,jdbcType=INTEGER}, 
-      #{lostLocation,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{lostLocation,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{contactWay, jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR},
       #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.njit.xydl.life.lostfound.entity.LostFound">
@@ -90,6 +92,9 @@
       </if>
       <if test="content != null">
         content,
+      </if>
+      <if test="contactWay != null">
+        contact_way,
       </if>
       <if test="creator != null">
         creator,
@@ -117,6 +122,9 @@
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
       </if>
+      <if test="contactWay != null">
+        #{contactWay,jdbcType=VARCHAR},
+      </if>
       <if test="creator != null">
         #{creator,jdbcType=VARCHAR},
       </if>
@@ -143,6 +151,9 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
+      <if test="contactWay != null">
+        contact_way = #{contactWay,jdbcType=VARCHAR},
+      </if>
       <if test="creator != null">
         creator = #{creator,jdbcType=VARCHAR},
       </if>
@@ -161,6 +172,7 @@
       lost_type = #{lostType,jdbcType=INTEGER},
       lost_location = #{lostLocation,jdbcType=INTEGER},
       content = #{content,jdbcType=VARCHAR},
+      contact_way = #{contactWay,jdbcType=VARCHAR},
       creator = #{creator,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER}

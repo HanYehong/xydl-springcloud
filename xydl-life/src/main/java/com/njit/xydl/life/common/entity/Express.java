@@ -1,5 +1,8 @@
 package com.njit.xydl.life.common.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Express {
@@ -10,6 +13,8 @@ public class Express {
     private String publishor;
 
     private Integer size;
+
+    private Integer expressType;
 
     private String description;
 
@@ -23,6 +28,8 @@ public class Express {
 
     private String specialAttention;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone="GMT+8")
     private Date orderDeadlineDate;
 
     private Double price;
@@ -31,10 +38,16 @@ public class Express {
 
     private Integer status;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     private Date acceptTime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     private Date createTime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     private Date updateTime;
 
     private Integer isDelete;
@@ -69,6 +82,14 @@ public class Express {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public Integer getExpressType() {
+        return expressType;
+    }
+
+    public void setExpressType(Integer expressType) {
+        this.expressType = expressType;
     }
 
     public String getDescription() {

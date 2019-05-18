@@ -1,6 +1,6 @@
 package com.njit.xydl.life.robot.controller;
 
-import com.njit.xydl.life.robot.controller.dto.ChatDTO;
+import com.njit.xydl.life.robot.controller.dto.RobotDTO;
 import com.njit.xydl.life.robot.service.ChatService;
 import com.njit.xydl.life.robot.service.RecognizeService;
 import com.yehong.han.config.response.Response;
@@ -25,12 +25,12 @@ public class RobotController {
     private RecognizeService recognizeService;
 
     @PostMapping("/chat")
-    public Response autoReplyRobot(@RequestBody ChatDTO param) {
+    public Response autoReplyRobot(@RequestBody RobotDTO param) {
         return Response.ok(chatService.chattingRobot(param.getMsg()));
     }
 
     @PostMapping("/recognize")
-    public Response recognizeCharacter(String imageUrl) throws IOException, URISyntaxException {
-        return Response.ok(recognizeService.recognitionRobot(imageUrl));
+    public Response recognizeCharacter(@RequestBody RobotDTO param) throws IOException, URISyntaxException {
+        return Response.ok(recognizeService.recognitionRobot(param.getImageUrl()));
     }
 }

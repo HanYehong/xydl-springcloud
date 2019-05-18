@@ -1,15 +1,15 @@
 server:
   port: 5001
 
-#eureka:
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: false
-#    service-url:
-#     defaultZone: http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
-#  instance:
-#    hostname: eureka5001.com
-#    instance-id: eureka5001.com
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+     defaultZone: http://eureka5002.com:5002/eureka/,http://eureka5003.com:5003/eureka/
+  instance:
+    hostname: eureka5001.com
+    instance-id: eureka5001.com
 
 #eureka:
 #  client:
@@ -21,9 +21,9 @@ server:
 #    hostname: eureka5001.com
 #    instance-id: eureka5001.com
 
-eureka:
-  client:
-    register-with-eureka: false
-  instance:
-      hostname: eureka5001.com
-      instance-id: eureka5001.com
+#eureka:
+#  client:
+#    register-with-eureka: false
+#  instance:
+#      hostname: eureka5001.com
+#      instance-id: eureka5001.com
