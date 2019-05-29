@@ -1,11 +1,10 @@
 package com.njit.xydl.life.feedback.service.impl;
 
 import com.njit.xydl.life.common.entity.Feedback;
-import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.feedback.controller.request.FeedbackRequest;
 import com.njit.xydl.life.feedback.dao.FeedbackMapper;
 import com.njit.xydl.life.feedback.service.FeedbackService;
-import com.yehong.han.config.exception.GatewayException;
+import com.yehong.han.config.authorization.UserUtil;
 import com.yehong.han.config.exception.ValidException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

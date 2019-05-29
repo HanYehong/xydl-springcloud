@@ -88,6 +88,11 @@ public class ExpressController {
         return Response.ok();
     }
 
+    @PostMapping("/getExpressOrder")
+    public Response getExpressOrder(@RequestBody ExpressRequest params) {
+        return Response.ok(expressService.getExpressOrder(params.getOrderNumber()));
+    }
+
     @PostMapping("/test")
     public Response test() {
         return Response.ok();

@@ -7,10 +7,7 @@ import com.njit.xydl.life.lostfound.service.LostFoundService;
 import com.yehong.han.config.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author yehong.han
@@ -48,7 +45,7 @@ public class LostFoundController {
 		return Response.ok();
 	}
 
-	@PostMapping("/listMine")
+	@GetMapping("/listMine")
 	public Response listLostFoundByPerson() {
 		return Response.ok(lostFoundService.listLostFoundByPerson());
 	}

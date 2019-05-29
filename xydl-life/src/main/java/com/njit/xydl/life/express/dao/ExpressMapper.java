@@ -22,8 +22,13 @@ public interface ExpressMapper {
 
     Express selectByOrderNumber(@Param("orderNumber") String orderNumber);
 
-    List<Express> selectExpressOrderByStatus(@Param("status") int status);
+    List<Express> selectExpressOrderByStatus(@Param("status") Integer status);
 
-    List<Express> selectExpressOrderByStatusAndPublishor(@Param("status") int status,
+    List<Express> selectExpressOrderByStatusAndPublishor(@Param("status") Integer status,
                                                          @Param("publishor") String publishor);
+
+    List<Express> selectTimeOutOrderBySugmentTime(@Param("beginTime")String beginTime,
+                                                  @Param("endTime")String endTime);
+
+    int updateTimeOutOrderStatus(List<Express> expressList);
 }

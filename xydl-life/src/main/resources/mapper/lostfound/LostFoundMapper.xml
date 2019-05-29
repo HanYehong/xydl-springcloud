@@ -43,7 +43,7 @@
     <if test="createTime != null">
       and DATE_FORMAT(lf.create_time,'%Y-%m-%d') = DATE_FORMAT(#{createTime},'%Y-%m-%d')
     </if>
-    order by lf.create_time asc
+    order by lf.id DESC
   </select>
   <select id="selectByLostNumber" resultMap="MultiResultMap">
     select
@@ -56,6 +56,7 @@
     lf.id, lf.lost_number, lf.lost_type, lf.lost_location, lf.content, contact_way, lf.creator, lf.create_time, lfi.image_url
     from lost_found lf left join lost_found_image lfi on lf.lost_number = lfi.lost_number
     where creator = #{creator} and lf.is_delete = 0
+    order by lf.id DESC
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 

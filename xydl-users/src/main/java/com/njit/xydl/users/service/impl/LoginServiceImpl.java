@@ -52,9 +52,6 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private WechatUserMapper wechatUserMapper;
 
-	@Autowired
-	private HttpServletRequest httpServletRequest;
-
 	private static final Integer EXPIRE_TIME = 3600 * 48;
 
 	@Transactional(rollbackFor = Exception.class)
@@ -90,10 +87,9 @@ public class LoginServiceImpl implements LoginService {
 		return token;
 	}
 
-	private String generateToken(String session_key, String openId) throws IOException {
+	private String generateToken(String sessionKey, String openId) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMM-ddHH-mmss");
-		String token = Md5Util.encrypt(session_key + "-" + openId + "-" + sdf.format(new Date()));
-		return token;
+		return Md5Util.encrypt(sessionKey + "-" + openId + "-" + sdf.format(new Date()));
 	}
 
 	private SessionBO getOpenIdByCode(String code) throws IOException {

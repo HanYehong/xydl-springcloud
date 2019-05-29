@@ -1,14 +1,13 @@
 package com.njit.xydl.life.lostfound.service.impl;
 
-import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.lostfound.controller.request.SearchRequest;
 import com.njit.xydl.life.lostfound.dao.LostFoundImageMapper;
 import com.njit.xydl.life.lostfound.dao.LostFoundMapper;
 import com.njit.xydl.life.lostfound.dao.result.LostFoundBean;
 import com.njit.xydl.life.lostfound.entity.LostFound;
 import com.njit.xydl.life.lostfound.service.LostFoundService;
+import com.yehong.han.config.authorization.UserUtil;
 import com.yehong.han.config.exception.ValidException;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,7 +39,7 @@ public class LostFoundServiceImpl implements LostFoundService {
 	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public void publishLostFound(LostFoundBean param) {
-		param.setCreator(UserUtil.getCurrentUserId());
+		param.setCreator(com.yehong.han.config.authorization.UserUtil.getCurrentUserId());
 		String lostNumber = generateLostNumber();
 		param.setLostNumber(lostNumber);
 		lostFoundMapper.insertSelective(param);
@@ -79,7 +78,7 @@ public class LostFoundServiceImpl implements LostFoundService {
 	}
 
 	private String generateLostNumber() {
-		return "LF" + new SimpleDateFormat("yyyyMMddHHmm").format(new Date()) + UUID.randomUUID().hashCode();
+		return "LF" + new SimpleDateFormat("yyyyMMddHHmm").format(new Date()) + Math.abs(UUID.randomUUID().hashCode());
 	}
 
 	public static void main(String args[]) {

@@ -24,7 +24,7 @@ public class SmsSendServiceImpl implements SmsSendService {
 
 	@Override
 	public void sendForRefuse(String phone) throws IOException {
-		String content = "同学，很抱歉，您的接单没有征得发布者同意~不要灰心，再接再厉吧。友情提示：信誉值是会影响接单成功率的哦~";
+		String content = "同学，很抱歉，您的接单没有征得发布者同意~不要灰心，再接再厉吧。";
 		sendBody(phone, content);
 	}
 

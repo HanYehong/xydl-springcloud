@@ -92,4 +92,11 @@ public interface ExpressService {
      */
     void rePublish(String orderNumber);
 
+    /**
+     * 根据订单号搜索订单
+     * @param orderNumber
+     * @return
+     */
+    Express getExpressOrder(String orderNumber);
+
 }

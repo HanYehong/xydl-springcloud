@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface UserService {
 
 	@PostMapping("/user/checkRealIdentity")
-	Boolean checkRealIdentity(@RequestBody OpenIdDTO param);
+	Response checkRealIdentity(@RequestBody OpenIdDTO param);
 
 	@PostMapping("/user/test")
 	Response test();

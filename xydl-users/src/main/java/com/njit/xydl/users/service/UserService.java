@@ -13,7 +13,7 @@ public interface UserService {
 
 	WechatUser getUser(String openId);
 
-	boolean checkRealIdentity(String openId);
+	int checkRealIdentity(String openId);
 
 	SchoolUser authorize(LoginDTO param);
 

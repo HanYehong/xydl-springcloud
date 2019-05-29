@@ -6,22 +6,23 @@ import com.njit.xydl.life.common.feign.PayService;
 import com.njit.xydl.life.common.feign.UserService;
 import com.njit.xydl.life.common.feign.dto.OpenIdDTO;
 import com.njit.xydl.life.common.feign.dto.PayDTO;
-import com.njit.xydl.life.common.util.UserUtil;
 import com.njit.xydl.life.express.dao.ExpressMapper;
 import com.njit.xydl.life.express.service.ExpressService;
 import com.njit.xydl.life.express.service.SmsSendService;
 import com.njit.xydl.life.express.service.bo.OrderListBO;
+import com.yehong.han.config.authorization.UserUtil;
 import com.yehong.han.config.cache.RedisHelper;
-import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.exception.ValidException;
 import com.yehong.han.config.response.Response;
 import com.yehong.han.config.response.Status;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -85,11 +86,12 @@ public class ExpressServiceImpl implements ExpressService {
         return result;
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public void catchOrder(String orderNumber) {
         checkRealIdentity();
         Express express = expressMapper.selectByOrderNumber(orderNumber);
-        if (StringUtils.isBlank(express.getAcceptor())) {
+        if (!StringUtils.isBlank(express.getAcceptor())) {
             throw new ValidException("该订单已经被接单啦，试试其它的吧~");
         }
         if (express.getPublishor().equals(UserUtil.getCurrentUserId())) {
@@ -151,6 +153,7 @@ public class ExpressServiceImpl implements ExpressService {
     public void received(String orderNumber) {
         Express express = getExpressOrder(orderNumber);
         express.setStatus(StatusEnum.COMPLETE.getCode());
+        express.setCompleteTime(new Date());
         expressMapper.updateByPrimaryKeySelective(express);
     }
 
@@ -195,17 +198,10 @@ public class ExpressServiceImpl implements ExpressService {
 
     @Override
     public void publishExpressOrder(Express express){
+        // 检查实名认证
         checkRealIdentity();
         // 发布者打款至中间账户
-        /*PayDTO param = new PayDTO();
-        param.setAccount(UserUtil.getCurrentUserId());
-        param.setMoney(express.getPrice());
-        int result = payService.payPersonToTemporary(param);
-        if (result == 0) {
-            throw new ValidException("服务繁忙，请稍后再试");
-        }else if (result == 2) {
-            throw new ValidException("余额不足，请充值");
-        }*/
+        payPersonToTemporary(express.getPrice());
         express.setPublishor(UserUtil.getCurrentUserId());
         express.setOrderNumber(generateOrderNumber());
         express.setStatus(StatusEnum.WAIT_ACCEPT.getCode());
@@ -229,10 +225,18 @@ public class ExpressServiceImpl implements ExpressService {
         express.setAcceptTime(null);
         express.setStatus(StatusEnum.WAIT_ACCEPT.getCode());
         express.setUpdateTime(new Date());
+        // 重置发布时间
+        express.setCreateTime(new Date());
+        // 默认截止时间+1天
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        c.add(Calendar.DAY_OF_MONTH, 1);
+        express.setOrderDeadlineDate(c.getTime());
         return expressMapper.updateByPrimaryKeySelective(express);
     }
 
-    private Express getExpressOrder(String orderNumber) {
+    @Override
+    public Express getExpressOrder(String orderNumber) {
         if (StringUtils.isBlank(orderNumber)) {
             throw new ValidException("订单号为空");
         }
@@ -244,7 +248,7 @@ public class ExpressServiceImpl implements ExpressService {
     }
 
     private String generateOrderNumber() {
-        String newNumber = "DL" + new SimpleDateFormat("yyyyMMddHHmm").format(new Date()) + UUID.randomUUID().hashCode();
+        String newNumber = "DL" + new SimpleDateFormat("yyyyMMddHHmm").format(new Date()) + Math.abs(UUID.randomUUID().hashCode());
         System.out.println(newNumber);
         return newNumber;
     }
@@ -259,9 +263,24 @@ public class ExpressServiceImpl implements ExpressService {
     private void checkRealIdentity() {
         OpenIdDTO param = new OpenIdDTO();
         param.setOpenId(UserUtil.getCurrentUserId());
-        boolean check = userService.checkRealIdentity(param);
-        if (!check) {
-            throw new ValidException("还没有进行实名认证不能接单哦~ 实名渠道：个人中心 -> 我的实名认证");
+        Response check = userService.checkRealIdentity(param);
+        if (Status.FAIL.getCode() == check.getCode() || check.getData() == null) {
+            throw new ValidException("哎呀~服务器开小差啦，再试一下？");
+        }
+        if (check.getData().equals(0)) {
+            throw new ValidException("还没有进行实名认证喔~ 实名渠道：个人中心 -> 我的实名认证");
+        }
+    }
+
+    private void payPersonToTemporary(double money) {
+        PayDTO param = new PayDTO();
+        param.setAccount(UserUtil.getCurrentUserId());
+        param.setMoney(money);
+        int result = payService.payPersonToTemporary(param);
+        if (result == 0) {
+            throw new ValidException("服务繁忙，请稍后再试");
+        }else if (result == 2) {
+            throw new ValidException("余额不足，请充值");
         }
     }
 

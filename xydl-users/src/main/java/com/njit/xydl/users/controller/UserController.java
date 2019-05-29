@@ -28,9 +28,9 @@ public class UserController {
 	}
 
 	@PostMapping("/checkRealIdentity")
-	public Boolean checkRealIdentity(@RequestBody OpenIdDTO param) {
+	public Response checkRealIdentity(@RequestBody OpenIdDTO param) {
 		System.out.println("param=====" + JSON.toJSONString(param));
-		return userService.checkRealIdentity(param.getOpenId());
+		return Response.ok(userService.checkRealIdentity(param.getOpenId()));
 	}
 
 	@PostMapping("/authorize")

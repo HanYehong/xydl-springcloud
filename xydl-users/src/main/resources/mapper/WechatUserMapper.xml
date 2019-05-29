@@ -19,7 +19,7 @@
     <result column="money_package" jdbcType="INTEGER" property="moneyPackage" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, open_id, nickname, avatar_url, city, province, country, gender, language, student_id, 
+    id, open_id, nickname, avatar_url, city, province, country, gender, `language`, student_id,
     authenticate_time, create_time, update_time, is_delete, money_package
   </sql>
 
@@ -44,12 +44,12 @@
     insert into wechat_user (id, open_id, nickname, 
       avatar_url, city, province, 
       country, gender, language, 
-      student_id, authenticate_time, create_time, 
+      student_id, authenticate_time,money_package, create_time,
       update_time, is_delete)
     values (#{id,jdbcType=BIGINT}, #{openId,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{avatarUrl,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
       #{country,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, #{language,jdbcType=VARCHAR}, 
-      #{studentId,jdbcType=VARCHAR}, #{authenticateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{studentId,jdbcType=VARCHAR}, #{authenticateTime,jdbcType=TIMESTAMP},#{moneyPackage,jdbcType=DOUBLE} , #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.njit.xydl.users.entity.WechatUser">
@@ -80,13 +80,16 @@
         gender,
       </if>
       <if test="language != null">
-        language,
+        `language`,
       </if>
       <if test="studentId != null">
         student_id,
       </if>
       <if test="authenticateTime != null">
         authenticate_time,
+      </if>
+      <if test="moneyPackage != null">
+        money_package,
       </if>
       <if test="createTime != null">
         create_time,
@@ -132,6 +135,9 @@
       <if test="authenticateTime != null">
         #{authenticateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="moneyPackage != null">
+        #{moneyPackage,jdbcType=DOUBLE},
+      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -168,13 +174,16 @@
         gender = #{gender,jdbcType=INTEGER},
       </if>
       <if test="language != null">
-        language = #{language,jdbcType=VARCHAR},
+        `language` = #{language,jdbcType=VARCHAR},
       </if>
       <if test="studentId != null">
         student_id = #{studentId,jdbcType=VARCHAR},
       </if>
       <if test="authenticateTime != null">
         authenticate_time = #{authenticateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="moneyPackage != null">
+        money_package = #{moneyPackage,jdbcType=DOUBLE},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -197,9 +206,10 @@
       province = #{province,jdbcType=VARCHAR},
       country = #{country,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=INTEGER},
-      language = #{language,jdbcType=VARCHAR},
+      `language` = #{language,jdbcType=VARCHAR},
       student_id = #{studentId,jdbcType=VARCHAR},
       authenticate_time = #{authenticateTime,jdbcType=TIMESTAMP},
+      money_package = #{moneyPackage,jdbcType=DOUBLE},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER}

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserServiceHystrix implements UserService {
 
 	@Override
-	public Boolean checkRealIdentity(OpenIdDTO param) {
-		return false;
+	public Response checkRealIdentity(OpenIdDTO param) {
+		return Response.ok(Status.FAIL);
 	}
 
 	@Override

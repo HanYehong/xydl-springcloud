@@ -6,6 +6,7 @@ import com.njit.xydl.users.service.PayService;
 import com.yehong.han.config.cache.RedisHelper;
 import com.yehong.han.config.exception.GatewayException;
 import com.yehong.han.config.exception.ValidException;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -74,8 +75,12 @@ public class PayServiceImpl implements PayService {
 	}
 
 	private void temporaryProcess(double money, int type) throws GatewayException {
+		double totalMoney = 0.0;
+		String tempMoney = RedisHelper.getRedisUtil().get("moneypackage.temporary");
+		if (!StringUtils.isBlank(tempMoney)) {
+			totalMoney = Double.parseDouble(tempMoney);
+		}
 		try {
-			double totalMoney = Double.parseDouble(RedisHelper.getRedisUtil().get("moneypackage.temporary"));
 			if (type == 0) {
 				totalMoney -= money;
 			} else {
@@ -83,6 +88,7 @@ public class PayServiceImpl implements PayService {
 			}
 			RedisHelper.getRedisUtil().set("moneypackage.temporary", String.valueOf(totalMoney));
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ValidException("中间账户异常，请稍后再试");
 		}
 	}

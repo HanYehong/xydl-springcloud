@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author yehong.han
  * @date 2019/4/17
  */
-@FeignClient(name = "xydl-users", fallback = PayServiceHystrix.class)
+@FeignClient(name = "xydl-user", fallback = PayServiceHystrix.class)
 public interface PayService {
 
 	@PostMapping("/pay/personToPerson")

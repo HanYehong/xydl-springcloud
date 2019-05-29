@@ -20,12 +20,13 @@
     <result column="accept_time" jdbcType="TIMESTAMP" property="acceptTime" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="complete_time" jdbcType="TIMESTAMP" property="completeTime" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
   </resultMap>
   <sql id="Base_Column_List">
     id, order_number, publishor, size, express_type, description, `name`, phone, pickup_code, destination,
     special_attention, order_deadline_date, price, acceptor, `status`, accept_time, create_time,
-    update_time, is_delete
+    update_time, complete_time, is_delete
   </sql>
   <select id="selectByOrderNumber" resultMap="BaseResultMap">
     select
@@ -38,12 +39,14 @@
     <include refid="Base_Column_List" />
     from express_order
     where `status` = #{status} and is_delete = 0
+    order by id desc
   </select>
   <select id="selectExpressOrderByStatusAndPublishor" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from express_order
     where `status` = #{status} and publishor = #{publishor} and is_delete = 0
+    order by id desc
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -61,14 +64,14 @@
       phone, pickup_code, destination, 
       special_attention, order_deadline_date, 
       price, acceptor, `status`,
-      accept_time, create_time, update_time, 
+      accept_time, create_time, update_time, complete_time,
       is_delete)
     values (#{id,jdbcType=BIGINT}, #{orderNumber,jdbcType=VARCHAR}, #{publishor,jdbcType=VARCHAR},
       #{size,jdbcType=INTEGER}, #{expressType,jdbcType=INTEGER} ,  #{description,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
       #{phone,jdbcType=VARCHAR}, #{pickupCode,jdbcType=VARCHAR}, #{destination,jdbcType=VARCHAR},
       #{specialAttention,jdbcType=VARCHAR}, #{orderDeadlineDate,jdbcType=TIMESTAMP},
       #{price,jdbcType=DOUBLE}, #{acceptor,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
-      #{acceptTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{acceptTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{completeTime,jdbcType=TIMESTAMP},
       #{isDelete,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.njit.xydl.life.common.entity.Express">
@@ -127,6 +130,9 @@
       </if>
       <if test="updateTime != null">
         update_time,
+      </if>
+      <if test="completeTime != null">
+        complete_time,
       </if>
       <if test="isDelete != null">
         is_delete,
@@ -187,6 +193,9 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="completeTime != null">
+        #{completeTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
       </if>
@@ -246,6 +255,9 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="completeTime != null">
+        complete_time = #{completeTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="isDelete != null">
         is_delete = #{isDelete,jdbcType=INTEGER},
       </if>
@@ -270,10 +282,22 @@
       accept_time = #{acceptTime,jdbcType=TIMESTAMP},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
+      complete_time = #{completeTime,jdbcType=TIMESTAMP},
       is_delete = #{isDelete,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <insert id="selectSelective" parameterType="com.njit.xydl.life.common.entity.Express">
+  <update id="updateTimeOutOrderStatus" parameterType="java.util.List">
+    <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+      UPDATE express_order
+      <set>
+        `status` = 4
+      </set>
+      <where>
+        id = #{item.id}
+      </where>
+    </foreach>
+  </update>
+  <select id="selectSelective" parameterType="com.njit.xydl.life.common.entity.Express" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from express_order
@@ -332,8 +356,17 @@
     <if test="updateTime != null">
       and update_time = #{updateTime}
     </if>
+    <if test="completeTime != null">
+      and complete_time = #{completeTime}
+    </if>
     <if test="isDelete != null">
       and is_delete = #{isDelete}
     </if>
-  </insert>
+    order by id desc
+  </select>
+  <select id="selectTimeOutOrderBySugmentTime" resultMap="BaseResultMap">
+    select *
+    from express_order
+    where create_time > #{beginTime} and create_time &lt; #{endTime} and `status` = 0 and order_deadline_date &lt; sysdate() and is_delete = 0
+  </select>
 </mapper>
