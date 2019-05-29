@@ -11,9 +11,9 @@ import java.io.Serializable;
 @Data
 public class PointerRequest implements Serializable {
 
-    private Long longitude;
+    private Double longitude;
 
-    private Long latitude;
+    private Double latitude;
 
     private Integer busCode;
 

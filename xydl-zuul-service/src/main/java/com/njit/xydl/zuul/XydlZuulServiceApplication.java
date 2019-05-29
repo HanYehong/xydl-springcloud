@@ -14,10 +14,10 @@ public class XydlZuulServiceApplication {
         SpringApplication.run(XydlZuulServiceApplication.class, args);
     }
 
-   /* @Bean
+    @Bean
     public AuthorizeFilter authorizeFilter() {
         return new AuthorizeFilter();
-    }*/
+    }
 
 }
 

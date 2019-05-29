@@ -19,16 +19,7 @@ import java.util.List;
 public class BusServiceImpl implements BusService {
 
     @Override
-    public void uploadPointer(PointerRequest pointer) throws GatewayException {
-
-        if (pointer.getBusCode() == null) {
-            throw new GatewayException("公交代码有误，请确认");
-        }
-
-        if (pointer.getLatitude() == null || pointer.getLongitude() == null) {
-            throw new GatewayException("上传的定位有误，请确认");
-        }
-
+    public void uploadPointer(PointerRequest pointer) {
         RedisHelper.getRedisUtil().setObject(CacheKey.BUS_PRE + pointer.getBusCode(), pointer);
     }
 

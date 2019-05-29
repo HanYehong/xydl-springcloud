@@ -16,7 +16,7 @@ public interface BusService {
      * 安卓端service上传坐标点到Redis数据库中
      * @param pointer
      */
-    void uploadPointer(PointerRequest pointer) throws GatewayException;
+    void uploadPointer(PointerRequest pointer);
 
     /**
      * 获得所有公交坐标点

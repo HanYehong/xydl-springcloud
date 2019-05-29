@@ -26,7 +26,7 @@ public class AuthorizeFilter extends ZuulFilter {
     /**
      * 排除过滤的 uri 地址
      */
-    private static final String LOGIN_URI = "/xydl-users/login/getToken";
+    private static final String LOGIN_URI = "/xydl-user/login/getToken";
     /**
      * 如果身份验证成功 则设置有效时间为2天
      */
@@ -65,15 +65,11 @@ public class AuthorizeFilter extends ZuulFilter {
     }
 
     private boolean verifyToken(String token) {
-
         String openId = RedisHelper.getRedisUtil().get(token);
-
-        if (openId == null || StringUtils.isBlank(openId)) {
+        if (StringUtils.isBlank(openId)) {
             return false;
         }
-
         RedisHelper.getRedisUtil().expire(token, EXPIRE_TIME);
-
         return true;
     }
 

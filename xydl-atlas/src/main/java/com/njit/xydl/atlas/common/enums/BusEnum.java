@@ -9,23 +9,33 @@ public enum BusEnum {
     /**
      * 一号小公交
      */
-    ONE_BUS(201901, "一号公交"),
+    ONE_BUS(0, "一号公交"),
     /**
      * 二号小公交
      */
-    TWO_BUS(201902, "二号公交"),
+    TWO_BUS(1, "二号公交"),
     /**
      * 三号小公交
      */
-    THREE_BUS(201903, "三号公交"),
+    THREE_BUS(2, "三号公交"),
     /**
      * 四号小公交
      */
-    FOUR_BUS(201904, "四号公交"),
+    FOUR_BUS(3, "四号公交"),
     /**
      * 五号小公交
      */
-    FIVE_BUS(201905, "五号公交");
+    FIVE_BUS(4, "五号公交"),
+
+    SIX_BUS(5, "六号公交"),
+
+    SEVEN_BUS(6, "7号公交"),
+
+    EIGHT_BUS(7, "八号公交"),
+
+    NINE_BUS(8, "九号公交"),
+
+    TEN_BUS(9, "十号公交");
 
     BusEnum(Integer code, String name) {
         this.code = code;

@@ -1,5 +1,5 @@
 server:
-  port: 6001
+  port: 6003
 
 mybatis:
   typeAliasesPackage: com.njit.xydl.atlas.*.entity
@@ -17,7 +17,7 @@ spring:
   application:
     name: xydl-atlas
 
-#×¢²áµ½eurekaÖÐÐÄ
+#×¢ï¿½áµ½eurekaï¿½ï¿½ï¿½ï¿½
 eureka:
   client:
     service-url:
