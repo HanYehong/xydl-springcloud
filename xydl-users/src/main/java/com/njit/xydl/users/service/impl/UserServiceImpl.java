@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 /**
  * @author yehong.han
@@ -52,6 +53,7 @@ public class UserServiceImpl implements UserService {
 		}
 		WechatUser wechatUser = getUser();
 		wechatUser.setStudentId(param.getUsername());
+		wechatUser.setAuthenticateTime(new Date());
 		wechatUserMapper.updateByPrimaryKeySelective(wechatUser);
 		return schoolUser;
 	}

@@ -155,6 +155,10 @@ public class ExpressServiceImpl implements ExpressService {
         express.setStatus(StatusEnum.COMPLETE.getCode());
         express.setCompleteTime(new Date());
         expressMapper.updateByPrimaryKeySelective(express);
+        PayDTO param = new PayDTO();
+        param.setTargetAccount(express.getAcceptor());
+        param.setMoney(express.getPrice());
+        payService.payTemporaryToPerson(param);
     }
 
     @Override

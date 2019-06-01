@@ -27,6 +27,10 @@ public class AuthorizeFilter extends ZuulFilter {
      * 排除过滤的 uri 地址
      */
     private static final String LOGIN_URI = "/xydl-user/login/getToken";
+
+    private static final String UPLOAD_POINTER_URL = "/xydl-atlas/bus/uploadPointer";
+
+    private static final String GET_POINTER_URL = "/xydl-atlas/bus/listPointer";
     /**
      * 如果身份验证成功 则设置有效时间为2天
      */
@@ -46,7 +50,9 @@ public class AuthorizeFilter extends ZuulFilter {
 
         String token = request.getHeader(TOKEN);
 
-        if (token == null || StringUtils.isBlank(token) || verifyToken(token)) {
+        System.out.println("token===" + token);
+
+        if (StringUtils.isBlank(token) || !verifyToken(token)) {
 
             context.setSendZuulResponse(false);
             throw new GatewayException(Status.UN_AUTHORIZE);
@@ -103,7 +109,9 @@ public class AuthorizeFilter extends ZuulFilter {
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest request = requestContext.getRequest();
 
-        return !LOGIN_URI.equals(request.getRequestURI());
+        return !LOGIN_URI.equals(request.getRequestURI()) &&
+                !UPLOAD_POINTER_URL.equals(request.getRequestURI()) &&
+                !GET_POINTER_URL.equals(request.getRequestURI());
     }
 
 }
